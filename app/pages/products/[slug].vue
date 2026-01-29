@@ -1,4 +1,5 @@
     <script setup lang="ts">
+    
     import productos, { type Producto, type Variante } from '@/assets/data/products'
 
     const route = useRoute()
@@ -70,6 +71,7 @@
         return varianteSeleccionada.value.precio || producto.value.variantes[0]?.precio || 0
     })
 
+    const productoAgregado = ref(false)
     // Función para añadir al carrito
     const añadirAlCarrito = () => {
         console.log('🎯 Botón añadir al carrito presionado')
@@ -88,8 +90,16 @@
             recargarCarrito()
         }, 100)
 
-        // Mostrar mensaje de confirmación
-        alert(`✅ ${producto.value.nombre} agregado al carrito\n\nCantidad: ${cantidad.value}\nPrecio: $${precioActual.value}`)
+        
+
+        const agregarAlCarrito = () => {
+            // lógica del carrito
+                productoAgregado.value = true
+
+                    setTimeout(() => {
+                        productoAgregado.value = false
+                    }, 2000)
+            }
 
         // Resetear cantidad a 1
         cantidad.value = 1
@@ -305,6 +315,10 @@
                     >
                         Añadir al carrito
                     </button>
+
+                    <p v-if="productoAgregado" class="text-green-600 mt-2">
+                        Producto agregado al carrito
+                    </p>
 
                     <!-- Información adicional -->
                     <div class="mt-6 space-y-4 pt-6 border-t border-gray-200">

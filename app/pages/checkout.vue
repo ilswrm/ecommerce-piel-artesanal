@@ -111,10 +111,12 @@ const procesarPago = async () => {
   }
   
   procesando.value = true
+
+  const mensajeError = ref<string | null>(null)
   
   try {
-    // Aquí harás la llamada a tu backend en DigitalOcean
-    // Por ahora, simularemos el flujo
+    // Aquí se hará la llamada a backend en DigitalOcean
+    // Simulación del flujo
     
     const ordenData = {
       cliente: datosCliente.value,
@@ -134,22 +136,14 @@ const procesarPago = async () => {
     //   method: 'POST',
     //   body: ordenData
     // })
-    
-    // Por ahora, simularemos con un timeout
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    // Aquí tu backend devolvería la URL de Stripe Checkout
-    // window.location.href = response.stripeUrl
-    
-    // Simulación: redirigir a una página de Stripe (reemplazar con tu URL real)
-    alert('En producción, aquí te redirigiremos a Stripe para completar el pago')
-    
-    // Para testing, puedes guardar la orden en localStorage
+    //window.location.href = response.stripeUrl
+
+    // localStorage en lo que se crea backend
     localStorage.setItem('orden-pendiente', JSON.stringify(ordenData))
     
   } catch (error) {
     console.error('Error al procesar pago:', error)
-    alert('Hubo un error al procesar tu pedido. Por favor intenta nuevamente.')
+    mensajeError.value = 'Hubo un error al procesar tu pedido.'
   } finally {
     procesando.value = false
   }
