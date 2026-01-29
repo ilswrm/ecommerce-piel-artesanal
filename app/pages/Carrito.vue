@@ -1,4 +1,5 @@
     <script setup lang="ts">
+    //Función que regresa un objeto
     const { 
     items, 
     totalItems, 
@@ -40,12 +41,12 @@
     }
     }
 
-    // Ir a checkout
+    //Ir a checkout
     const irACheckout = () => {
     navigateTo('/checkout')
     }
 
-    // Meta tags
+    //Meta tags
     useHead({
     title: 'Carrito de Compras',
     meta: [
@@ -92,16 +93,16 @@
             </NuxtLink>
         </div>
 
-        <!-- Carrito con items -->
+        <!--Carrito con items -->
         <div v-else class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Columna izquierda: Lista de productos -->
+            <!--Columna izquierda: Lista de productos -->
             <div class="lg:col-span-2 space-y-4">
             <div
                 v-for="(item, index) in items"
                 :key="`${item.producto.id}-${item.variante.id}`"
                 class="bg-white rounded-xl p-4 md:p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div class="flex gap-4">
-                <!-- Imagen del producto -->
+                <!--Imagen del producto -->
                 <div class="flex-shrink-0">
                     <NuxtLink :to="`/products/${item.producto.slug}`">
                     <img
@@ -112,7 +113,7 @@
                     </NuxtLink>
                 </div>
 
-                <!-- Info del producto -->
+                <!--Info del producto -->
                 <div class="flex-1 min-w-0">
                     <div class="flex justify-between items-start gap-4">
                     <div class="flex-1 min-w-0">

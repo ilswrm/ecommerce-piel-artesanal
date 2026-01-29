@@ -1,11 +1,11 @@
     <script setup lang="ts">
-    
+    // Importa el products.ts a este archivo al igual que su información
     import productos, { type Producto, type Variante } from '@/assets/data/products'
 
     const route = useRoute()
     const { agregarItem, recargarCarrito } = useCarrito()
 
-    // Encontrar el producto
+    //Encontrar el producto
     const producto = computed<Producto>(() => {
         const found = productos.find(p => p.slug === route.params.slug)
 
@@ -19,11 +19,11 @@
         return found
     })
 
-    // Estado reactivo
+    //Estado reactivo
     const imagenPrincipal = ref(producto.value.imgs[0] || '')
     const cantidad = ref(1)
 
-    // Helper para obtener la primera variante de forma segura
+    // Obtener la primera variante
     const obtenerPrimeraVariante = (): Variante => {
         return producto.value.variantes[0] || {
             id: 0,
@@ -31,10 +31,10 @@
         }
     }
 
-    // Variante seleccionada (inicia con la primera variante)
+    //Variante seleccionada (inicia con la primera variante)
     const varianteSeleccionada = ref<Variante>(obtenerPrimeraVariante())
 
-    // Opciones únicas de color y tipo
+    //Opciones de color y tipo
     const coloresDisponibles = computed(() => {
         const colores = [...new Set(producto.value.variantes.map(v => v.color).filter(Boolean))]
         return colores as string[]
@@ -45,11 +45,11 @@
         return tipos as string[]
     })
 
-    // Estados de selección individual
+    //Estados de selección individual
     const colorSeleccionado = ref(varianteSeleccionada.value.color || coloresDisponibles.value[0] || 'Negro')
     const tipoSeleccionado = ref(varianteSeleccionada.value.tipo || tiposDisponibles.value[0] || '')
 
-    // Actualizar variante cuando cambia color o tipo
+    //Actualizar variante cuando cambia color o tipo
     const actualizarVariante = () => {
         const varianteEncontrada = producto.value.variantes.find(v => {
             const matchColor = !v.color || v.color === colorSeleccionado.value
@@ -74,7 +74,6 @@
     const productoAgregado = ref(false)
     // Función para añadir al carrito
     const añadirAlCarrito = () => {
-        console.log('🎯 Botón añadir al carrito presionado')
         
         // Agregar al carrito usando el composable
         agregarItem(
@@ -85,7 +84,7 @@
             tipoSeleccionado.value
         )
 
-        // Forzar recarga del carrito para actualizar badge
+        // Forzar recarga del carrito para actualizar el contador del carrito
         setTimeout(() => {
             recargarCarrito()
         }, 100)
@@ -101,11 +100,11 @@
                     }, 2000)
             }
 
-        // Resetear cantidad a 1
+        //Resetear cantidad a 1
         cantidad.value = 1
     }
 
-    // Incrementar/decrementar cantidad
+    //Incrementar/decrementar cantidad
     const incrementarCantidad = () => {
         cantidad.value++
     }
@@ -129,9 +128,7 @@
             </NuxtLink>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-                <!-- ============================================ -->
                 <!-- BLOQUE MOBILE: Info antes de la imagen -->
-                <!-- ============================================ -->
                 <div class="flex flex-col gap-3 lg:hidden">
                     <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">
                         {{ producto.tipo }}
@@ -147,10 +144,7 @@
                         {{ producto.descripcion }}
                     </p>
                 </div>
-
-                <!-- ============================================ -->
                 <!-- COLUMNA IZQUIERDA: Imágenes -->
-                <!-- ============================================ -->
                 <div class="flex flex-col gap-4">
                     <!-- Imagen principal -->
                     <div class="relative overflow-hidden rounded-2xl shadow-lg">
@@ -199,7 +193,7 @@
                         </button>
                     </div>
 
-                    <!-- Hint para thumbnails -->
+                    <!-- instruccion para thumbnails -->
                     <p 
                         v-if="producto.imgs.length > 1" 
                         class="text-xs text-gray-500 flex items-center gap-1.5"
@@ -208,10 +202,7 @@
                         <span>Oprime una imagen para verla más grande</span>
                     </p>
                 </div>
-
-                <!-- ============================================ -->
                 <!-- COLUMNA DERECHA: Info del producto (Desktop) -->
-                <!-- ============================================ -->
                 <div class="hidden lg:flex flex-col gap-6">
                     <!-- Tipo y nombre -->
                     <div class="space-y-2">
@@ -236,7 +227,7 @@
                         {{ producto.descripcion }}
                     </p>
 
-                    <!-- Selector de Color (si hay múltiples colores) -->
+                    <!-- Selector de Color  -->
                     <div v-if="coloresDisponibles.length > 1" class="space-y-3">
                         <label class="text-sm font-semibold text-gray-900">
                             Color: <span class="font-normal text-gray-600">{{ colorSeleccionado }}</span>
@@ -353,10 +344,7 @@
                         </details>
                     </div>
                 </div>
-
-                <!-- ============================================ -->
                 <!-- BLOQUE MOBILE: Controles y botón -->
-                <!-- ============================================ -->
                 <div class="lg:hidden space-y-6 mt-4">
                     <!-- Selector de Color (Mobile) -->
                     <div v-if="coloresDisponibles.length > 1" class="space-y-3">
@@ -373,8 +361,7 @@
                                     colorSeleccionado === color
                                         ? 'border-gray-900 bg-gray-900 text-white'
                                         : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
-                                ]"
-                            >
+                                ]">
                                 {{ color }}
                             </button>
                         </div>
@@ -395,8 +382,7 @@
                                     tipoSeleccionado === tipo
                                         ? 'border-gray-900 bg-gray-900 text-white'
                                         : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
-                                ]"
-                            >
+                                ]">
                                 {{ tipo }}
                             </button>
                         </div>

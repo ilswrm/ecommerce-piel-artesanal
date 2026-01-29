@@ -24,7 +24,7 @@ onMounted(() => {
                 </nav>
                 <NuxtLink to="/carrito" class="relative">
                     <UButton icon="i-heroicons-shopping-bag" variant="ghost" color="neutral" aria-label="Carrito"/>
-                    <!-- Badge contador -->
+                    <!-- contador del carrito-->
                     <span v-if="totalItems > 0" class="absolute -top-1 -right-1 bg-gray-900 text-white text-xs font-bold rounded-full h-5 min-w-[20px] flex items-center justify-center px-1.5 pointer-events-none">
                         {{ totalItems > 99 ? '99+' : totalItems }}
                     </span>

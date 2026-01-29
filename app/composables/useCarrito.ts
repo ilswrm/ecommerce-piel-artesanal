@@ -1,5 +1,8 @@
+    //Importa solamente los tipos de datos 
     import type { Producto, Variante } from '@/assets/data/products'
 
+    //Interfaz para definir cómo se representa un producto dentro del carrito
+    //Item del carrito
     export interface ItemCarrito {
     producto: Producto
     variante: Variante
@@ -8,7 +11,7 @@
     tipo?: string
     }
 
-    // Función helper para cargar desde localStorage
+    //Función para cargar desde localStorage
     const cargarDesdeLocalStorage = (): ItemCarrito[] => {
     if (import.meta.client) {
         try {
@@ -24,10 +27,10 @@
     }
 
     export const useCarrito = () => {
-    // Estado reactivo del carrito - se inicializa con el contenido de localStorage
+    //Estado reactivo del carrito se inicializa con el contenido de localStorage
     const items = useState<ItemCarrito[]>('carrito-items', () => cargarDesdeLocalStorage())
 
-    // Guardar carrito en localStorage
+    //Guardar carrito en localStorage
     const guardarCarrito = () => {
         if (import.meta.client) {
         try {
@@ -39,7 +42,7 @@
         }
     }
 
-    // Recargar carrito desde localStorage (útil para sincronizar)
+    //Recargar carrito desde localStorage
     const recargarCarrito = () => {
         if (import.meta.client) {
         try {
@@ -53,29 +56,29 @@
         }
         }
     }
-        // Computed: Total de items en el carrito
+        //computed: Total de items en el carrito
         const totalItems = computed(() => {
             return items.value.reduce((total, item) => total + item.cantidad, 0)
         })
 
-        // Computed: Subtotal del carrito
+        //computed: Subtotal del carrito
         const subtotal = computed(() => {
             return items.value.reduce((total, item) => {
             return total + (item.variante.precio * item.cantidad)
             }, 0)
         })
 
-        // Computed: Total con envío (puedes ajustar la lógica)
+        //computed: Total con envío 
         const costoEnvio = computed(() => {
-            // Lógica de envío: gratis si es mayor a $1000, sino $150
-            return subtotal.value >= 1000 ? 0 : 150
+            // gratis si es mayor a $3000, sino $150
+            return subtotal.value >= 3000 ? 0 : 150
         })
 
         const total = computed(() => {
             return subtotal.value + costoEnvio.value
         })
 
-        // Agregar item al carrito
+        //Agregar item al carrito
         const agregarItem = (
             producto: Producto,
             variante: Variante,
@@ -107,7 +110,7 @@
             guardarCarrito()
         }
 
-        // Actualizar cantidad de un item
+        //Actualizar cantidad de un item
         const actualizarCantidad = (index: number, cantidad: number) => {
             if (cantidad <= 0) {
             eliminarItem(index)
@@ -117,7 +120,7 @@
             }
         }
 
-        // Eliminar item del carrito
+        //Eliminar item del carrito
         const eliminarItem = (index: number) => {
             if (items.value[index]) {
             items.value.splice(index, 1)
@@ -125,18 +128,18 @@
             }
         }
 
-        // Vaciar carrito completo
+        //vaciar carrito completo
         const vaciarCarrito = () => {
             items.value = []
             guardarCarrito()
         }
 
-        // Obtener item por índice
+        //obtener item por índice
         const obtenerItem = (index: number) => {
             return items.value[index] || null
         }
 
-        // Verificar si el carrito está vacío
+        //verificar si el carrito está vacío
         const estaVacio = computed(() => {
             return items.value.length === 0
         })

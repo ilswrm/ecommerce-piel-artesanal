@@ -1,3 +1,4 @@
+/*Tipografias Montserrat y Playfair Display*/
 @font-face {
     font-family: 'Montserrat';
     src: url('/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
@@ -12,6 +13,7 @@
     font-style: normal;
     font-display: swap;
 }
+/*Framework Tailwind y componentes de nuxt*/
 @import "tailwindcss";
 @import "@nuxt/ui";
 

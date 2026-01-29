@@ -1,4 +1,5 @@
 <script setup lang="ts">
+//Función que regresa un objeto
 const { 
   items, 
   subtotal, 
@@ -131,7 +132,7 @@ const procesarPago = async () => {
       total: total.value
     }
     
-    // TODO: Llamada real al backend
+    // Llamada real al backend
     // const response = await $fetch('/api/crear-checkout-stripe', {
     //   method: 'POST',
     //   body: ordenData

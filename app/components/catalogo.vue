@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// Importa el products.ts a este archivo
 import productos from '@/assets/data/products'
 
 </script>
@@ -13,12 +14,14 @@ import productos from '@/assets/data/products'
 
         </div>
             <div class="grid-productos">
+                <!--Por cada producto del catálogo renderiza un artículo-->
                 <article v-for="producto in productos" :key="producto.id" class="producto">
                     <NuxtImg :src="producto.imgs[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
                     <div class="contenido">
                         <h3>{{ producto.tipo.toUpperCase() }}</h3>
                         <h2 id="product-title">{{ producto.nombre }}</h2>
                         <p class="precio text-2xl font-bold mb-2">
+                            <!--Toma el precio de la primera variante y si no existe muestra su no disponibilidad -->
                             <span class="rounded px-1 py-0.5" style="background-color: #A3A09F;">${{ producto.variantes[0]?.precio || "Precio no disponible" }}</span>
                         </p>
                         <p class="line-clamp-4 leading-6">{{ producto.descripcion }}</p>
@@ -28,8 +31,7 @@ import productos from '@/assets/data/products'
                     </div>
                 </article>
             </div>
-            <p class="mt-20 text-center max-w-x-lg mx-auto text-gray-700 relative 
-                before:block before:w-full before:h-0.25 before:bg-black before:mb-2 before:content-['']"">    
+            <p class="mt-20 text-center max-w-x-lg mx-auto text-gray-700 relative before:block before:w-full before:h-0.25 before:bg-black before:mb-2 before:content-['']">    
                 Cada pieza se fabrica individualmente a mano con materiales de alta calidad y durabilidad. Los detalles y colores pueden variar entre cada pieza como resultado de su proceso de manufactura, lo que la hace única.</p>
     </section>
 </template>

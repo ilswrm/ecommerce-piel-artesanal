@@ -1,3 +1,5 @@
+//Estructurasdel producto y variante
+
 export interface Variante {
     id: number;
     color?: string;
@@ -17,7 +19,7 @@ export interface Producto {
     imgs: string[];
     variantes: Variante[]; 
 }
-
+//Catálogo de los productos: 11 productos en total
 const productos: Producto[] = [
     {
     id: 1,
@@ -185,5 +187,5 @@ const productos: Producto[] = [
 
 ]
 
-
+// Exporta el catálogo de productos para ser utilizado por las páginas y los componentes 
 export default productos;
