@@ -1,15 +1,15 @@
 <script setup lang="ts">
-//Función que regresa un objeto
 const { 
   items, 
   subtotal, 
   costoEnvio, 
   total, 
   estaVacio,
-  recargarCarrito
+  recargarCarrito,
+  vaciarCarrito
 } = useCarrito()
 
-// Cargar carrito
+// Recargar carrito
 onMounted(() => {
   recargarCarrito()
 })
@@ -112,39 +112,48 @@ const procesarPago = async () => {
   }
   
   procesando.value = true
-
-  const mensajeError = ref<string | null>(null)
   
   try {
-    // Aquí se hará la llamada a backend en DigitalOcean
-    // Simulación del flujo
-    
     const ordenData = {
       cliente: datosCliente.value,
       items: items.value.map(item => ({
-        productoId: item.producto.id,
-        varianteId: item.variante.id,
+        producto: {
+          id: item.producto.id,
+          nombre: item.producto.nombre,
+          imgs: item.producto.imgs
+        },
+        variante: {
+          id: item.variante.id,
+          precio: item.variante.precio
+        },
         cantidad: item.cantidad,
-        precio: item.variante.precio
+        color: item.color,
+        tipo: item.tipo
       })),
       subtotal: subtotal.value,
       costoEnvio: costoEnvio.value,
       total: total.value
     }
     
-    // Llamada real al backend
-    // const response = await $fetch('/api/crear-checkout-stripe', {
-    //   method: 'POST',
-    //   body: ordenData
-    // })
-    //window.location.href = response.stripeUrl
-
-    // localStorage en lo que se crea backend
-    localStorage.setItem('orden-pendiente', JSON.stringify(ordenData))
+    // Llamada al backend para crear sesión de Stripe
+    //const response = await $fetch('/api/crear-sesion-stripe', {
+    //  method: 'POST',
+     // body: ordenData
+    //})
     
-  } catch (error) {
+    //if (response.success && response.url) {
+      // Vaciar carrito local
+     // vaciarCarrito()
+      
+      // Redirigir a Stripe Checkout
+     // window.location.href = response.url
+    //} else {
+    //  throw new Error(response.error || 'Error al crear sesión de pago')
+    //gir}
+    
+  } catch (error: any) {
     console.error('Error al procesar pago:', error)
-    mensajeError.value = 'Hubo un error al procesar tu pedido.'
+    alert(`Hubo un error al procesar tu pedido: ${error.message}\nPor favor intenta nuevamente.`)
   } finally {
     procesando.value = false
   }
