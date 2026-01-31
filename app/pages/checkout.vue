@@ -136,20 +136,21 @@ const procesarPago = async () => {
     }
     
     // Llamada al backend para crear sesión de Stripe
-    //const response = await $fetch('/api/crear-sesion-stripe', {
-    //  method: 'POST',
-     // body: ordenData
-    //})
+    const response = await $fetch('/api/crear-sesion-stripe', {
+      method: 'POST',
+      body: ordenData
+    })
+    console.log('Respuesta crear sesión:', response)
     
-    //if (response.success && response.url) {
-      // Vaciar carrito local
-     // vaciarCarrito()
+    if (response.success && (response as any).url) {
+        //Vaciar carrito local
+          vaciarCarrito()
       
       // Redirigir a Stripe Checkout
-     // window.location.href = response.url
-    //} else {
-    //  throw new Error(response.error || 'Error al crear sesión de pago')
-    //gir}
+    window.location.href = (response as any).url
+    } else {
+    throw new Error((response as any).error || 'Error al crear sesión de pago')
+    }
     
   } catch (error: any) {
     console.error('Error al procesar pago:', error)
