@@ -45,15 +45,13 @@ export default defineEventHandler(async (event) => {
 
     console.log('📦 Calculando envío para CP:', codigoPostal)
 
-return {
-    success: true,
-    costoEnvio: 150, // Costo fijo por el momento
-    codigoPostal: codigoPostal,
-    servicio: 'Estándar'
-    }
+throw createError({
+    statusCode: 503,
+    message: 'Servicio de envío no configurado.'
+  })
 
     /* 
-  // 5. DESCOMENTAR ESTO cuando se tenga la API key de envios.com:
+  // 5. DESCOMENTAR  cuando exists API key de envios.com:
 
     try {
     const response = await $fetch<EnviosComResponse>('https://api.envios.com/v1/cotizar', {

@@ -6,7 +6,9 @@ const {
   total, 
   estaVacio,
   recargarCarrito,
-  vaciarCarrito
+  vaciarCarrito,
+  calcularCostoEnvio,   // Para llamar a la API cuando el usuario escriba su codigo postal
+  calculandoEnvio 
 } = useCarrito()
 
 // Recargar carrito
@@ -47,6 +49,15 @@ const estadosMexico = [
 // Validación del formulario
 const errores = ref<Record<string, string>>({})
 const procesando = ref(false)
+
+// Calcular el envío automáticamente cuando el usuario escribe su codigo postal
+// Se ejecuta cada vez que cambia datosCliente.codigoPostal
+// Solo llama a la API cuando tiene los 5 dígitos completos
+watch(() => datosCliente.value.codigoPostal, async (nuevoCP) => {
+  if (nuevoCP && nuevoCP.length === 5) {
+    await calcularCostoEnvio(nuevoCP)
+  }
+})
 
 const validarFormulario = () => {
   errores.value = {}
@@ -373,14 +384,16 @@ useHead({
                       id="codigoPostal"
                       v-model="datosCliente.codigoPostal"
                       type="text"
+                      inputmode="numeric"
                       maxlength="5"
+                      placeholder="01000"
+                      @keydown="$event.key.match(/[^0-9]/) && !['Backspace','Tab','ArrowLeft','ArrowRight','Delete'].includes($event.key) && $event.preventDefault()"
                       :class="[
                         'w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors',
                         errores.codigoPostal 
                           ? 'border-red-500 focus:border-red-600 input-error' 
                           : 'border-gray-300 focus:border-gray-900'
                       ]"
-                      placeholder="01000"
                     />
                     <p v-if="errores.codigoPostal" class="text-red-600 text-sm mt-1">
                       {{ errores.codigoPostal }}
@@ -460,11 +473,27 @@ useHead({
               </div>
               <div class="flex justify-between text-gray-600">
                 <span>Envío</span>
-                <span>{{ formatearPrecio(costoEnvio) }}</span>
+                <!-- Tres estados posibles: pendiente, calculando, calculado -->
+                <span v-if="!datosCliente.codigoPostal" class="text-gray-400 text-sm italic">
+                  Se calcula con tu CP
+                </span>
+                <span v-else-if="calculandoEnvio" class="text-blue-600 text-sm flex items-center gap-1">
+                  <Icon name="ph:spinner" size="14" class="animate-spin" />
+                  Calculando...
+                </span>
+                <span v-else>
+                  {{ formatearPrecio(costoEnvio) }}
+                </span>
               </div>
               <div class="border-t pt-3 flex justify-between text-lg font-bold text-gray-900">
                 <span>Total</span>
-                <span>{{ formatearPrecio(total) }}</span>
+                <!-- Si aún no tiene CP, solo muestra el subtotal -->
+                <span v-if="!datosCliente.codigoPostal || calculandoEnvio">
+                  {{ formatearPrecio(subtotal) }}+
+                </span>
+                <span v-else>
+                  {{ formatearPrecio(total) }}
+                </span>
               </div>
             </div>
 

@@ -31,7 +31,7 @@
     const items = useState<ItemCarrito[]>('carrito-items', () => cargarDesdeLocalStorage())
 
     // Estado del costo de envío dinámico
-    const costoEnvioCalculado = useState<number>('costo-envio', () => 150) // Default 150
+    const costoEnvioCalculado = useState<number>('costo-envio', () => 0) // Default 150
     const calculandoEnvio = useState<boolean>('calculando-envio', () => false)
 
     //Guardar carrito en localStorage
@@ -103,7 +103,7 @@
         } catch (error) {
         console.error('❌ Error al calcular envío:', error)
         // Usar costo por defecto si falla
-        costoEnvioCalculado.value = 150
+        costoEnvioCalculado.value = 0
         } finally {
         calculandoEnvio.value = false
         }

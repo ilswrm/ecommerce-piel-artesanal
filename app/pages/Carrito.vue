@@ -4,8 +4,6 @@
     items, 
     totalItems, 
     subtotal, 
-    costoEnvio, 
-    total, 
     estaVacio,
     recargarCarrito,
     actualizarCantidad,
@@ -204,16 +202,16 @@
                 <!-- Desglose -->
                 <div class="space-y-3 mb-6">
                 <div class="flex justify-between text-gray-600">
-                    <span>Subtotal</span>
-                    <span>{{ formatearPrecio(subtotal) }}</span>
+                    <span>Subtotal ({{ totalItems }} {{ totalItems === 1 ? 'artículo' : 'artículos' }})</span>
+                    <span class="font-semibold text-gray-900">{{ formatearPrecio(subtotal) }}</span>
                 </div>
-                <div class="flex justify-between text-gray-600">
-                    <span>Envío</span>
-                    <span>{{ formatearPrecio(costoEnvio) }}</span>
-                </div>
-                <div class="border-t pt-3 flex justify-between text-lg font-bold text-gray-900">
-                    <span>Total</span>
-                    <span>{{ formatearPrecio(total) }}</span>
+
+                <!-- Mensaje de envío -->
+                <div class="flex items-start gap-2 bg-blue-50 rounded-lg p-3 mt-2">
+                    <Icon name="ph:truck" size="18" class="text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p class="text-sm text-blue-800">
+                    El costo de envío se calculará en el siguiente paso según tu código postal.
+                    </p>
                 </div>
                 </div>
 
