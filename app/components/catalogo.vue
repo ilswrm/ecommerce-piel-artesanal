@@ -37,11 +37,33 @@ import productos from '@/assets/data/products'
 </template>
 
 <style>
-.grid-productos{
+
+#catalogo div h3{
+    letter-spacing: 2px;
+}
+.grid-productos {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Mobile: 1 columna por defecto */
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
+/* Tablet (md: 768px+): 2 columnas */
+@media (min-width: 768px) {
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop (lg: 1024px+): exactamente 3 columnas máximo */
+@media (min-width: 1024px) {
+    .grid-productos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .producto {
     display: flex;
     flex-direction: column;
