@@ -10,13 +10,13 @@ onMounted(() => {
 </script>
 <template>
     <UApp>
-        <UHeader>
+        <UHeader class="h-24">
             <template #title>
                 <ULink to="/" nuxt class="site-title">PielArtesanal</ULink>
             </template>
 
             <template #right>
-                <div class="flex items-center gap-2">
+                <div class="flex items-end gap-4">
                     <!-- NAV DESKTOP -->
                     <nav class="hidden lg:flex items-center gap-6">
                     <NuxtLink to="/#catalogo" class="font-medium relative pb-1 group">

@@ -18,29 +18,29 @@ import productos from '@/assets/data/products'
                 <article v-for="producto in productos" :key="producto.id" class="producto">
                     <NuxtImg :src="producto.imgs[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
                     <div class="contenido">
-                        <h3>{{ producto.tipo.toUpperCase() }}</h3>
-                        <h2 id="product-title">{{ producto.nombre }}</h2>
-                        <p class="precio text-2xl font-bold mb-2">
-                            <!--Toma el precio de la primera variante y si no existe muestra su no disponibilidad -->
-                            <span class="rounded px-1 py-0.5" style="background-color: #A3A09F;">${{ producto.variantes[0]?.precio || "Precio no disponible" }}</span>
-                        </p>
-                        <p class="line-clamp-4 leading-6">{{ producto.descripcion }}</p>
-                        <NuxtLink :to="`/products/${producto.slug}`">
-                            <button>Ver detalles y comprar</button>
-                        </NuxtLink>
+                        <h3 class="tipo-producto">{{ producto.tipo.toUpperCase() }}</h3>
+                        <h2 class="product-title">{{ producto.nombre }}</h2>
+                        <p class="descripcion-producto">{{ producto.descripcion }}</p>
+                        
+                        <div class="producto-footer">
+                            <p class="precio-label">Precio: <span class="precio-monto">${{ producto.variantes[0]?.precio || "N/A" }} MXN</span></p>
+                            
+                            <p class="colores-label">Colores: <span class="colores-lista">{{ producto.variantes.map(v => v.color).join(', ') }}</span></p>
+                            
+                            <NuxtLink :to="`/products/${producto.slug}`">
+                                <button class="btn-detalles">Ver Detalles y Comprar</button>
+                            </NuxtLink>
+                        </div>
                     </div>
                 </article>
             </div>
-            <p class="mt-20 text-center max-w-x-lg mx-auto text-gray-700 relative before:block before:w-full before:h-0.25 before:bg-black before:mb-2 before:content-['']">    
+            <p class="mt-20 text-center max-w-x-lg mx-auto text-xs text-gray-500 opacity-60 relative before:block before:w-full before:h-0.25 before:bg-black before:mb-2 before:content-['']">    
                 Cada pieza se fabrica individualmente a mano con materiales de alta calidad y durabilidad. Los detalles y colores pueden variar entre cada pieza como resultado de su proceso de manufactura, lo que la hace única.</p>
     </section>
 </template>
 
 <style>
 
-#catalogo div h3{
-    letter-spacing: 2px;
-}
 .grid-productos {
     display: grid;
     gap: 1.5rem;
@@ -71,58 +71,96 @@ import productos from '@/assets/data/products'
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #f0f0f0;
 }
 
 .producto img {
     width: 100%;
-    height: 200px;
+    height: 280px;
     object-fit: cover;
 }
 
 .contenido {
-    padding: 1rem;
+    padding: 1.25rem;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
-.contenido h3 {
+.tipo-producto {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
 }
 
-.contenido p {
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.descripcion-producto {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
     display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.5rem;
-    margin: 0;
 }
 
-.contenido p.precio {
-    margin-bottom: 0.5rem; 
+.producto-footer {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px solid #f0f0f0;
 }
 
-.contenido button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #111827; 
+.precio-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.precio-monto {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.colores-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.colores-label strong,
+.colores-lista {
+    color: #1a1a1a;
+}
+
+.btn-detalles {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: #111827;
     color: #ffffff;
     border: 1px solid #111827;
     border-radius: 9999px;
     cursor: pointer;
     font-size: 0.875rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: center;
 }
 
-.contenido button:hover {
+.btn-detalles:hover {
     background-color: #f3f4f6;
     color: #111827;
 }
-
-#product-title{
-    font-size: 1.6rem;
-}
-
-
 </style>

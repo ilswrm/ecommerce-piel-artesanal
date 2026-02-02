@@ -10,8 +10,10 @@ useHead({
         
         <header>
         <section id="hero">
-            <h1 class="title">Piel Artesanal Mexicana 100% Hecha a Mano</h1>
-            <p>Descubre nuestra exclusiva colección de productos de piel premium elaborados por artesanos jaliscienses. Cada pieza es única, con carácter que se adapta a tu uso diario.</p>
+            <div class="hero-content">
+                <h1 class="title">Piel Artesanal Mexicana 100% Hecha a Mano</h1>
+                <p>Descubre nuestra exclusiva colección de productos de piel premium elaborados por artesanos jaliscienses. Cada pieza es única, con carácter que se adapta a tu uso diario.</p>
+            </div>
         </section>
         </header>
 
@@ -39,7 +41,7 @@ useHead({
             </div>
         </section>
 
-        <section class="contact-section">
+        <section id="contacto" class="contact-section">
             <div class="contact-container">
                 <div class="contact-card">
                 <div class="contact-header">
@@ -70,7 +72,7 @@ useHead({
         </section>
     </main>
 
-    <footer id="contacto" class="footer">
+    <footer id="footer" class="footer">
         <div class="footer-container">
             <div class="footer-grid">
 
@@ -136,7 +138,7 @@ useHead({
     text-align: center;
     color: #FFFFFF;
     text-shadow: 5px 5px 20px #000000;
-    min-height: 60vh;
+    min-height: 50vh;
     padding: var(--space-lg);
     background-image: url('~/assets/images/piel-artesanal-hero-1.webp');
     background-size: cover;
@@ -161,6 +163,11 @@ useHead({
     z-index: 1;
 }
 
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 #hero .title {
     margin: var(--space-sm) 0;
 }
@@ -170,7 +177,7 @@ useHead({
     text-align: center;
     color: var(--color-background);
 }
-#why-us h3{
+#why-us h3 :nth-child(1){
         letter-spacing: 2px;
 }
 
@@ -192,8 +199,8 @@ useHead({
     border: 1px solid rgba(255, 255, 255, 0.2)
 }
 .beneficios-card h3 {
-    font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-family: var(--font-title);
 }
 
 .beneficios-card p {

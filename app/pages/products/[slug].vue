@@ -72,6 +72,30 @@
     })
 
     const productoAgregado = ref(false)
+
+        // Helper para obtener el color visual del botón
+    const obtenerColorBoton = (color: string) => {
+        const coloresMap: Record<string, { bg: string, border: string, text: string, hover: string }> = {
+            'Café': { 
+                bg: 'bg-amber-800', 
+                border: 'border-amber-900', 
+                text: 'text-white',
+                hover: 'hover:bg-amber-900'
+            },
+            'Negro': { 
+                bg: 'bg-gray-900', 
+                border: 'border-gray-900', 
+                text: 'text-white',
+                hover: 'hover:bg-black'
+            }
+        }
+        return coloresMap[color] || { 
+            bg: 'bg-white', 
+            border: 'border-gray-300', 
+            text: 'text-gray-700',
+            hover: 'hover:border-gray-400'
+        }
+    }
     // Función para añadir al carrito
     const añadirAlCarrito = () => {
         
@@ -130,15 +154,19 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <!-- BLOQUE MOBILE: Info antes de la imagen -->
                 <div class="flex flex-col gap-3 lg:hidden">
-                    <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">
-                        {{ producto.tipo }}
-                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                            {{ producto.tipo }}
+                        </span>
+                        <span class="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                            Artesanal 100%
+                        </span>
+                    </div>
                     <h1 class="text-3xl font-bold text-gray-900">
                         {{ producto.nombre }}
                     </h1>
-                    <p class="text-3xl font-bold text-gray-900">
-                        ${{ precioActual }}
-                        <span class="text-sm font-normal text-gray-500 ml-2">MXN</span>
+                    <p class="text-lg text-gray-600">
+                        Precio: <span class="text-3xl font-bold text-gray-900">${{ precioActual }} MXN</span>
                     </p>
                     <p class="text-gray-600 leading-relaxed mt-2">
                         {{ producto.descripcion }}
@@ -199,16 +227,21 @@
                         class="text-xs text-gray-500 flex items-center gap-1.5"
                     >
                         <Icon name="ph:hand-tap" size="14" />
-                        <span>Oprime una imagen para verla más grande</span>
+                        <span>Haz clic en cada miniatura para verla más grande</span>
                     </p>
                 </div>
                 <!-- COLUMNA DERECHA: Info del producto (Desktop) -->
                 <div class="hidden lg:flex flex-col gap-6">
                     <!-- Tipo y nombre -->
                     <div class="space-y-2">
-                        <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">
-                            {{ producto.tipo }}
-                        </span>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                                {{ producto.tipo }}
+                            </span>
+                            <span class="text-xs font-medium text-gray-600 bg-gray-100 px-2 py-1 rounded">
+                                Artesanal 100%
+                            </span>
+                        </div>
                         <h1 class="text-4xl font-bold text-gray-900">
                             {{ producto.nombre }}
                         </h1>
@@ -216,9 +249,8 @@
 
                     <!-- Precio -->
                     <div class="border-y border-gray-200 py-4">
-                        <p class="text-4xl font-bold text-gray-900">
-                            ${{ precioActual }}
-                            <span class="text-base font-normal text-gray-500 ml-2">MXN</span>
+                        <p class="text-lg text-gray-600">
+                            Precio: <span class="text-4xl font-bold text-gray-900">${{ precioActual }} MXN</span>
                         </p>
                     </div>
 
@@ -230,7 +262,7 @@
                     <!-- Selector de Color  -->
                     <div v-if="coloresDisponibles.length > 1" class="space-y-3">
                         <label class="text-sm font-semibold text-gray-900">
-                            Color: <span class="font-normal text-gray-600">{{ colorSeleccionado }}</span>
+                            Selecciona el color:
                         </label>
                         <div class="flex gap-3">
                             <button
@@ -238,15 +270,26 @@
                                 :key="color"
                                 @click="colorSeleccionado = color"
                                 :class="[
-                                    'px-4 py-2 rounded-lg border-2 text-sm font-medium transition-all',
+                                    'px-6 py-3 rounded-lg border-2 text-sm font-medium transition-all min-w-[100px] flex items-center justify-center gap-2',
                                     colorSeleccionado === color
-                                        ? 'border-gray-900 bg-gray-900 text-white'
-                                        : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
+                                        ? `${obtenerColorBoton(color).bg} ${obtenerColorBoton(color).border} ${obtenerColorBoton(color).text} ring-2 ring-offset-2 ring-gray-900`
+                                        : `bg-white border-gray-300 text-gray-700 hover:border-gray-400`
                                 ]"
                             >
+                                <span 
+                                    v-if="color === 'Café'"
+                                    class="w-4 h-4 rounded-full bg-amber-800 border border-amber-900"
+                                ></span>
+                                <span 
+                                    v-if="color === 'Negro'"
+                                    class="w-4 h-4 rounded-full bg-black border border-gray-700"
+                                ></span>
                                 {{ color }}
                             </button>
                         </div>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Selecciona el color para personalizar tu pedido
+                        </p>
                     </div>
 
                     <!-- Selector de Tipo (si hay múltiples tipos) -->
@@ -349,7 +392,7 @@
                     <!-- Selector de Color (Mobile) -->
                     <div v-if="coloresDisponibles.length > 1" class="space-y-3">
                         <label class="text-sm font-semibold text-gray-900">
-                            Color: <span class="font-normal text-gray-600">{{ colorSeleccionado }}</span>
+                            Selecciona el color:
                         </label>
                         <div class="flex gap-3">
                             <button
@@ -357,14 +400,25 @@
                                 :key="color"
                                 @click="colorSeleccionado = color"
                                 :class="[
-                                    'px-4 py-2 rounded-lg border-2 text-sm font-medium transition-all',
+                                    'px-6 py-3 rounded-lg border-2 text-sm font-medium transition-all min-w-[100px] flex items-center justify-center gap-2',
                                     colorSeleccionado === color
-                                        ? 'border-gray-900 bg-gray-900 text-white'
-                                        : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
+                                        ? `${obtenerColorBoton(color).bg} ${obtenerColorBoton(color).border} ${obtenerColorBoton(color).text} ring-2 ring-offset-2 ring-gray-900`
+                                        : `bg-white border-gray-300 text-gray-700 hover:border-gray-400`
                                 ]">
+                                <span 
+                                    v-if="color === 'Café'"
+                                    class="w-4 h-4 rounded-full bg-amber-800 border border-amber-900"
+                                ></span>
+                                <span 
+                                    v-if="color === 'Negro'"
+                                    class="w-4 h-4 rounded-full bg-black border border-gray-700"
+                                ></span>
                                 {{ color }}
                             </button>
                         </div>
+                        <p class="text-xs text-gray-500 mt-2">
+                            Selecciona el color para personalizar tu pedido
+                        </p>
                     </div>
 
                     <!-- Selector de Tipo (Mobile) -->
