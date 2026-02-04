@@ -33,6 +33,7 @@
     // Estado del costo de envío dinámico
     const costoEnvioCalculado = useState<number>('costo-envio', () => 0) // Default 150
     const calculandoEnvio = useState<boolean>('calculando-envio', () => false)
+    const errorEnvio = useState<string | null>('error-envio', () => null)
 
     //Guardar carrito en localStorage
     const guardarCarrito = () => {
@@ -73,13 +74,14 @@
         })
 
         //Función para calcular costo de envío dinámicamente
-    const calcularCostoEnvio = async (codigoPostal: string) => {
+        const calcularCostoEnvio = async (codigoPostal: string, ciudad?: string, estado?: string, direccion?: string, conSeguro?: boolean) => {
         if (!codigoPostal || !/^\d{5}$/.test(codigoPostal)) {
         console.warn('Código postal inválido:', codigoPostal)
         return
         }
         
         calculandoEnvio.value = true
+        errorEnvio.value = null
         
         try {
         const response = await $fetch<{
@@ -90,19 +92,30 @@
             error?: string
         }>('/api/calcular-envio', {
             method: 'POST',
-            body: { codigoPostal }
+            body: { 
+            codigoPostal,
+            ciudad,
+            estado,
+            direccion,
+            subtotal: subtotal.value,  
+            conSeguro: conSeguro ?? true
+            }
         })
         
-        // Usar el costo que retorna el servidor
-        costoEnvioCalculado.value = response.costoEnvio
-        console.log('✅ Costo de envío calculado:', response.costoEnvio)
-        
-        if (!response.success && response.error) {
+        if (response.success) {
+            // Usar el costo que retorna el servidor
+            costoEnvioCalculado.value = response.costoEnvio
+            console.log('✅ Costo de envío calculado:', response.costoEnvio)
+            errorEnvio.value = null
+        } else {
+            // Mostrar error al usuario
+            errorEnvio.value = response.error || 'No pudimos calcular el envío'
+            costoEnvioCalculado.value = 0
             console.warn('⚠️', response.error)
         }
         } catch (error) {
         console.error('❌ Error al calcular envío:', error)
-        // Usar costo por defecto si falla
+        errorEnvio.value = 'No pudimos calcular el costo de envío. Por favor intenta de nuevo.'
         costoEnvioCalculado.value = 0
         } finally {
         calculandoEnvio.value = false
@@ -119,91 +132,92 @@
 
     // Agregar item al carrito
     const agregarItem = (
-    producto: Producto,
-    variante: Variante,
-    cantidad: number,
-    color?: string,
-    tipo?: string
+        producto: Producto,
+        variante: Variante,
+        cantidad: number,
+        color?: string,
+        tipo?: string
     ) => {
-    console.log('🛒 Agregando al carrito:', producto.nombre, 'x', cantidad)
-    
-    const existente = items.value.find(
+        console.log('🛒 Agregando al carrito:', producto.nombre, 'x', cantidad)
+        
+        const existente = items.value.find(
         item => 
-        item.producto.id === producto.id && 
-        item.variante.id === variante.id
-    )
+            item.producto.id === producto.id && 
+            item.variante.id === variante.id
+        )
 
-    if (existente) {
+        if (existente) {
         existente.cantidad += cantidad
         console.log('📦 Producto ya existía, nueva cantidad:', existente.cantidad)
-    } else {
+        } else {
         items.value.push({
-        producto,
-        variante,
-        cantidad,
-        color,
-        tipo
+            producto,
+            variante,
+            cantidad,
+            color,
+            tipo
         })
         console.log('✨ Nuevo producto agregado')
+        }
+
+        guardarCarrito()
+        console.log('📊 Total items en carrito:', totalItems.value)
     }
 
-    guardarCarrito()
-    console.log('📊 Total items en carrito:', totalItems.value)
-    }
-
-  // Actualizar cantidad
+    // Actualizar cantidad
     const actualizarCantidad = (index: number, cantidad: number) => {
-    if (cantidad <= 0) {
+        if (cantidad <= 0) {
         eliminarItem(index)
-    } else if (items.value[index]) {
+        } else if (items.value[index]) {
         items.value[index].cantidad = cantidad
         guardarCarrito()
-    }
+        }
     }
 
-  // Eliminar item
+    // Eliminar item
     const eliminarItem = (index: number) => {
-    if (items.value[index]) {
+        if (items.value[index]) {
         items.value.splice(index, 1)
         guardarCarrito()
-    }
+        }
     }
 
-  // Vaciar carrito
+    // Vaciar carrito
     const vaciarCarrito = () => {
-    items.value = []
-    guardarCarrito()
+        items.value = []
+        guardarCarrito()
     }
 
-  // Obtener item
+    // Obtener item
     const obtenerItem = (index: number) => {
-    return items.value[index] || null
+        return items.value[index] || null
     }
 
-  // Computed: ¿Está vacío?
+    // Computed: ¿Está vacío?
     const estaVacio = computed(() => {
-    return items.value.length === 0
+        return items.value.length === 0
     })
 
     return {
-    // Estado
-    items,
-    
-    // Computed
-    totalItems,
-    subtotal,
-    costoEnvio,
-    total,
-    estaVacio,
-    calculandoEnvio, // 🆕 Para mostrar "Calculando..." en UI
-    
-    // Métodos
-    recargarCarrito,
-    agregarItem,
-    actualizarCantidad,
-    eliminarItem,
-    vaciarCarrito,
-    obtenerItem,
-    calcularCostoEnvio // 🆕 Función para calcular envío
-  }
-}
+        // Estado
+        items,
+        
+        // Computed
+        totalItems,
+        subtotal,
+        costoEnvio,
+        total,
+        estaVacio,
+        calculandoEnvio,
+        errorEnvio, // 🆕 Para mostrar errores en UI
+        
+        // Métodos
+        recargarCarrito,
+        agregarItem,
+        actualizarCantidad,
+        eliminarItem,
+        vaciarCarrito,
+        obtenerItem,
+        calcularCostoEnvio
+        }
+    }

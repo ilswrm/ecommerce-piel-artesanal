@@ -87,7 +87,7 @@ useHead({
             <div class="flex items-center gap-3">
             <Icon name="ph:whatsapp-logo" size="20" class="text-gray-400" />
             <a href="https://wa.me/525569360654" target="_blank" class="hover:text-gray-900">
-                WhatsApp: +52 556 936 0654
+                WhatsApp: 55 6936 0654
             </a>
             </div>
         </div>
