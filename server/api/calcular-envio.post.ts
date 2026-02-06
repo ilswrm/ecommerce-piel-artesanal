@@ -151,16 +151,17 @@ export default defineEventHandler(async (event) => {
     const masBarata = opciones.reduce((min: any, actual: any) =>
       (actual.totalPrice || 999999) < (min.totalPrice || 999999) ? actual : min
     )
-
-    const precioBase = masBarata.totalPrice || masBarata.price || masBarata.rate  // ← CAMBIAR "precio" por "precioBase"
+    
+    const precioBase = masBarata.totalPrice || masBarata.price || masBarata.rate
     const servicio = masBarata.serviceDescription || masBarata.service_name || masBarata.service || 'Estándar'
 
-    // Calcular seguro manualmente (1% del subtotal + IVA)
-    const costoSeguro = conSeguro ? Math.round((subtotal * 0.01) * 1.16) : 0
+    // Calcular seguro sobre el TOTAL del pedido (producto + envío), igual que Envía
+    const totalPedido = subtotal + Math.round(precioBase)
+    const costoSeguro = conSeguro ? Math.ceil((totalPedido * 0.01) * 1.16) : 0
     const precioFinal = Math.round(precioBase) + costoSeguro
 
     console.log(`✅ Precio base: $${precioBase}`)
-    console.log(`🛡️ Seguro: $${costoSeguro} (${conSeguro ? 'SÍ' : 'NO'})`)
+    console.log(`🛡️ Seguro: $${costoSeguro} sobre $${totalPedido} (${conSeguro ? 'SÍ' : 'NO'})`)
     console.log(`📊 Total: $${precioFinal} - Servicio: ${servicio}`)
 
     return {

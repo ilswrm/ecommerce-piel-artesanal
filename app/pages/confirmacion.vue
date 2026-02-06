@@ -51,10 +51,6 @@ useHead({
             <span class="font-semibold">Número de orden:</span>
             <span class="font-mono text-gray-900">{{ ordenNumero }}</span>
             </div>
-            <div class="flex justify-between">
-            <span class="font-semibold">ID de pago:</span>
-            <span class="font-mono text-sm text-gray-900">{{ sessionIdDisplay }}</span>
-            </div>
         </div>
 
         <div class="mt-6 p-4 bg-blue-50 rounded-lg">
