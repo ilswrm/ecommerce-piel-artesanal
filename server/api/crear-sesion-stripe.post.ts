@@ -29,17 +29,17 @@ export default defineEventHandler(async (event) => {
     }
 
     // Logging para debug
-    console.log('🔐 Creando sesión de Stripe...')
-    console.log('📧 Email:', cliente.email)
-    console.log('💰 Total:', total, 'MXN')
-    console.log('🧪 Modo:', process.env.STRIPE_SECRET_KEY.includes('test') ? 'TEST' : 'PRODUCCIÓN')
+    //console.log('🔐 Creando sesión de Stripe...')
+    //console.log('📧 Email:', cliente.email)
+    //console.log('💰 Total:', total, 'MXN')
+    //console.log('🧪 Modo:', process.env.STRIPE_SECRET_KEY.includes('test') ? 'TEST' : 'PRODUCCIÓN')
     
     try {
         // Mapear items del carrito a Price IDs de Stripe
         const line_items = items.map((item: any) => {
             const priceId = obtenerStripePriceId(item.producto.id, item.variante.id)
             
-            console.log(`📦 Producto: ${item.producto.nombre} (${item.producto.id}-${item.variante.id}) → ${priceId}`)
+            //console.log(`📦 Producto: ${item.producto.nombre} (${item.producto.id}-${item.variante.id}) → ${priceId}`)
             
             return {
                 price: priceId,
@@ -109,7 +109,7 @@ export default defineEventHandler(async (event) => {
             }
         })
         
-        console.log('✅ Sesión creada:', session.id)
+        //console.log('✅ Sesión creada:', session.id)
         
         return {
             success: true,
@@ -119,7 +119,7 @@ export default defineEventHandler(async (event) => {
         }
         
     } catch (error: any) {
-        console.error('❌ Error Stripe:', error.message)
+        //console.error('❌ Error Stripe:', error.message)
         
         // Mensajes de error más descriptivos
         let errorMsg = error.message

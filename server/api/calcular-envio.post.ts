@@ -85,7 +85,7 @@ async function cotizarEnvio(destino: any, subtotal: number, conSeguro: boolean) 
   }
 }
 
-  console.log('📤 Request a Envía:', JSON.stringify(requestBody, null, 2))
+  //console.log('📤 Request a Envía:', JSON.stringify(requestBody, null, 2))
 
   const response = await $fetch('https://api.envia.com/ship/rate/', {
     method: 'POST',
@@ -123,9 +123,9 @@ export default defineEventHandler(async (event) => {
 
   try {
     // Paso 1: Validar que el CP existe
-    console.log('📍 Validando CP con Geocodes API...')
+    //console.log('📍 Validando CP con Geocodes API...')
     const cpValido = await validarCP(codigoPostal)
-    console.log('✅ CP válido:', cpValido)
+    //console.log('✅ CP válido:', cpValido)
 
     // Construir destino con datos del cliente (si están disponibles) o datos del CP validado
     const destino = {
@@ -139,10 +139,10 @@ export default defineEventHandler(async (event) => {
     }
 
     // Paso 2: Cotizar envío
-    console.log('📦 Cotizando envío con Shipping API...')
-    console.log('📍 Destino:', destino)
+    //console.log('📦 Cotizando envío con Shipping API...')
+    //console.log('📍 Destino:', destino)
     const cotizacion = await cotizarEnvio(destino, subtotal || 0, conSeguro ?? true)
-    console.log('📊 Cotización recibida:', JSON.stringify(cotizacion))
+    //console.log('📊 Cotización recibida:', JSON.stringify(cotizacion))
 
   // Extraer el precio más bajo de las opciones
   const opciones = (cotizacion as any).data || (cotizacion as any) || []
@@ -160,9 +160,9 @@ export default defineEventHandler(async (event) => {
     const costoSeguro = conSeguro ? Math.ceil((totalPedido * 0.01) * 1.16) : 0
     const precioFinal = Math.round(precioBase) + costoSeguro
 
-    console.log(`✅ Precio base: $${precioBase}`)
-    console.log(`🛡️ Seguro: $${costoSeguro} sobre $${totalPedido} (${conSeguro ? 'SÍ' : 'NO'})`)
-    console.log(`📊 Total: $${precioFinal} - Servicio: ${servicio}`)
+    //console.log(`✅ Precio base: $${precioBase}`)
+    //console.log(`🛡️ Seguro: $${costoSeguro} sobre $${totalPedido} (${conSeguro ? 'SÍ' : 'NO'})`)
+    //console.log(`📊 Total: $${precioFinal} - Servicio: ${servicio}`)
 
     return {
       success: true,
