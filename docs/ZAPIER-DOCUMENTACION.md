@@ -278,10 +278,21 @@ payload = {
 response = requests.post(url, headers=headers, json=payload)
 envia_response = response.json()
 
-# Extraer tracking number
+# Extraer tracking (data es una lista, no un dict)
 try:
-    tracking_number = envia_response['data']['trackingNumber']
-except:
+    data = envia_response.get('data', [])
+    
+    if isinstance(data, list) and len(data) > 0:
+        # data es una lista, tomar el primer elemento
+        tracking_number = data[0].get('trackingNumber', 'N/A')
+    elif isinstance(data, dict):
+        # data es un dict (por si cambia el formato)
+        tracking_number = data.get('trackingNumber', 'N/A')
+    else:
+        tracking_number = 'N/A'
+        
+except Exception as e:
+    print(f"Error extrayendo tracking: {e}")
     tracking_number = 'N/A'
 
 # ============================================
