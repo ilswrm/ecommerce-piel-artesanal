@@ -84,13 +84,15 @@
         errorEnvio.value = null
         
         try {
+        const config = useRuntimeConfig()
+
         const response = await $fetch<{
             success: boolean
             costoEnvio: number
             codigoPostal: string
             servicio?: string
             error?: string
-        }>('/api/calcular-envio', {
+        }>(`${config.public.apiBase}/api/calcular-envio`, {
             method: 'POST',
             body: { 
             codigoPostal,

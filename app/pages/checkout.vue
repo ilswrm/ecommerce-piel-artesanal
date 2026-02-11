@@ -173,8 +173,13 @@ const procesarPago = async () => {
       total: total.value
     }
     
-    // Llamada al backend para crear sesión de Stripe
-    const response = await $fetch('/api/crear-sesion-stripe', {
+    const config = useRuntimeConfig()
+    // Llamada al backend Express para crear sesión de Stripe
+    const response = await $fetch<{
+      success: boolean
+      url?: string
+      error?: string
+    }>(`${config.public.apiBase}/api/crear-sesion-stripe`, {
       method: 'POST',
       body: ordenData
     })

@@ -8,6 +8,11 @@ export default defineNuxtConfig({
   image: {
     provider: 'none', 
     ipx: {baseURL: '/_ipx'}
+  },
+  runtimeConfig: {
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE
+    }
   }
 
 })
