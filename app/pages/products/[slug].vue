@@ -96,6 +96,19 @@
             hover: 'hover:border-gray-400'
         }
     }
+    // Helper para obtener las medidas de cada talla
+    const obtenerMedidasTalla = (talla: string) => {
+        const medidas: Record<string, string> = {
+            'Chica': '74-82cm',
+            'Mediana': '82-90cm',
+            'Grande': '90-98.5cm',
+            // Otras tallas (por si agregas más productos con tallas)
+            'CH': '74-82cm',
+            'M': '82-90cm',
+            'G': '90-98.5cm'
+    }
+    return medidas[talla] || ''
+}
     // Función para añadir al carrito
     const añadirAlCarrito = () => {
         
@@ -295,7 +308,7 @@
                     <!-- Selector de Tipo (si hay múltiples tipos) -->
                     <div v-if="tiposDisponibles.length > 1" class="space-y-3">
                         <label class="text-sm font-semibold text-gray-900">
-                            Tipo: <span class="font-normal text-gray-600">{{ tipoSeleccionado }}</span>
+                            Talla: <span class="font-normal text-gray-600">{{ tipoSeleccionado }}</span>
                         </label>
                         <div class="flex flex-col gap-2">
                             <button
@@ -309,7 +322,15 @@
                                         : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
                                 ]"
                             >
-                                {{ tipo }}
+                                <span class="font-semibold">{{ tipo }}</span>
+                                <span 
+                                    :class="[
+                                        'block text-xs mt-1',
+                                        tipoSeleccionado === tipo ? 'text-gray-300' : 'text-gray-500'
+                                    ]"
+                                >
+                                    {{ obtenerMedidasTalla(tipo) }}
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -424,7 +445,7 @@
                     <!-- Selector de Tipo (Mobile) -->
                     <div v-if="tiposDisponibles.length > 1" class="space-y-3">
                         <label class="text-sm font-semibold text-gray-900">
-                            Tipo: <span class="font-normal text-gray-600">{{ tipoSeleccionado }}</span>
+                            Talla: <span class="font-normal text-gray-600">{{ tipoSeleccionado }}</span>
                         </label>
                         <div class="flex flex-col gap-2">
                             <button
@@ -437,7 +458,15 @@
                                         ? 'border-gray-900 bg-gray-900 text-white'
                                         : 'border-gray-300 bg-white text-gray-700 hover:border-gray-400'
                                 ]">
-                                {{ tipo }}
+                                <span class="font-semibold">{{ tipo }}</span>
+                                <span 
+                                    :class="[
+                                        'block text-xs mt-1',
+                                        tipoSeleccionado === tipo ? 'text-gray-300' : 'text-gray-500'
+                                    ]"
+                                >
+                                    {{ obtenerMedidasTalla(tipo) }}
+                                </span>
                             </button>
                         </div>
                     </div>

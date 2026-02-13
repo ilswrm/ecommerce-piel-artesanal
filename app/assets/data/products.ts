@@ -180,10 +180,14 @@ const productos: Producto[] = [
     dimensiones: 'CH: 74-82cm, M: 82-90cm, G: 90-98.5cm',
     imgs: ['/productos/11-cinturon-1.webp', '/productos/11-cinturon-1-vista-1.webp'],
     variantes: [
-        {id: 25, color: 'Negro',precio: 490},
-        {id: 26, color: 'Café',precio: 490}
+        {id: 25, color: 'Negro', tipo: 'Chica', precio: 490},
+        {id: 26, color: 'Negro', tipo: 'Mediana', precio: 490},
+        {id: 27, color: 'Negro', tipo: 'Grande', precio: 490},
+        {id: 28, color: 'Café', tipo: 'Chica', precio: 490},
+        {id: 29, color: 'Café', tipo: 'Mediana', precio: 490},
+        {id: 30, color: 'Café', tipo: 'Grande', precio: 490}
     ]
-    }
+}
 
 ]
 
