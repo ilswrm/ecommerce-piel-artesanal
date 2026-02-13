@@ -177,7 +177,6 @@ const productos: Producto[] = [
     nombre: 'Cinturón',
     descripcion: 'Cinturón de piel confeccionado completamente a mano con técnicas tradicionales. Cada detalle está cuidadosamente elaborado, asegurando durabilidad, estilo y un acabado único que mejora con el uso diario.',
     materiales: 'Elaborados en piel 100% hecha a mano. Incluye broche de latón sólido que ayuda a mantener el cinturón cerrado, dándole más firmeza. Piel premium curtida artesanalmente. Con el paso del tiempo, notarás que irán tomando más carácter y adaptándose a tu uso diario.',
-    dimensiones: 'CH: 74-82cm, M: 82-90cm, G: 90-98.5cm',
     imgs: ['/productos/11-cinturon-1.webp', '/productos/11-cinturon-1-vista-1.webp'],
     variantes: [
         {id: 25, color: 'Negro', tipo: 'Chica', precio: 490},

@@ -25,7 +25,7 @@ import productos from '@/assets/data/products'
                         <div class="producto-footer">
                             <p class="precio-label">Precio: <span class="precio-monto">${{ producto.variantes[0]?.precio || "N/A" }} MXN</span></p>
                             
-                            <p class="colores-label">Colores: <span class="colores-lista">{{ producto.variantes.map(v => v.color).join(', ') }}</span></p>
+                            <p class="colores-label">Colores: <span class="colores-lista">{{ [...new Set(producto.variantes.map(v => v.color).filter(Boolean))].join(', ') }}</span></p>
                             
                             <NuxtLink :to="`/products/${producto.slug}`">
                                 <button class="btn-detalles">Ver Detalles y Comprar</button>
