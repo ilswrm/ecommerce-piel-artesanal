@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxt/image'],
   css: ['~/assets/css/main.css'],
-  ui: {colorMode: false },
+  ui: {colorMode: false, fonts: false },
   image: {
     provider: 'none', 
     ipx: {baseURL: '/_ipx'}

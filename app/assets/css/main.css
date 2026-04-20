@@ -1,6 +1,6 @@
-/*Tipografias Montserrat y Playfair Display*/
+/*Tipografias*/
 @font-face {
-    font-family: 'Montserrat';
+    font-family: 'Inter';
     src: url('/assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-weight: 400 700;
     font-style: normal;
@@ -21,7 +21,7 @@
     --color-text:black;
     --color-background:white;
 
-    --font-main:'Montserrat', sans-serif;
+    --font-main:'Inter', sans-serif;
     --font-title: 'Playfair Display', serif;
 
     --space-xs: 0.5rem;   /*8px*/
