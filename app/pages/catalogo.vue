@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import productos from '@/assets/data/products'
+import { PhMagnifyingGlass } from '@phosphor-icons/vue'
 
 useHead({
     title: 'Piel Artesanal | Catálogo',
@@ -23,8 +24,10 @@ const seleccion = ref<Record<number, { color: string, textura: string }>>(
     Object.fromEntries(productos.map(p => [p.id, { color: 'Negro', textura: 'Texturizada' }]))
 )
 
+const getSeleccion = (id: number) => seleccion.value[id] ?? { color: 'Negro', textura: 'Texturizada' }
+
 const imagenActual = (producto: any) => {
-    const { color, textura } = seleccion.value[producto.id]
+    const { color, textura } = getSeleccion(producto.id)
     const key = `${color.toLowerCase()}-${textura.toLowerCase()}` as keyof typeof producto.imgs
     return producto.imgs[key]?.[0]
         ?? producto.imgs['negro-texturizada']?.[0]
@@ -33,7 +36,7 @@ const imagenActual = (producto: any) => {
 }
 
 const precioActual = (producto: any) => {
-    const { color, textura } = seleccion.value[producto.id]
+    const { color, textura } = getSeleccion(producto.id)
     const variante = producto.variantes.find((v: any) =>
         v.color === color && v.textura === textura
     )
@@ -41,8 +44,15 @@ const precioActual = (producto: any) => {
 }
 
 const linkProducto = (producto: any) => {
-    const { color, textura } = seleccion.value[producto.id]
+    const { color, textura } = getSeleccion(producto.id)
     return `/products/${producto.slug}?color=${encodeURIComponent(color)}&textura=${encodeURIComponent(textura)}`
+}
+const setColor = (id: number, color: string) => {
+    if (seleccion.value[id]) seleccion.value[id].color = color
+}
+
+const setTextura = (id: number, textura: string) => {
+    if (seleccion.value[id]) seleccion.value[id].textura = textura
 }
 </script>
 
@@ -50,23 +60,22 @@ const linkProducto = (producto: any) => {
     <section class="catalogo-page">
 
         <!-- ─── ENCABEZADO ──────────────────────────────────────────────── -->
-        <div class="catalogo-header">
-            <h3>NUESTRA COLECCIÓN</h3>
-            <h2 class="title mb-4">Catálogo Completo</h2>
-            <div class="w-16 h-1 bg-black mb-6 mx-auto"></div>
-            <p class="max-w-lg mx-auto text-center text-gray-500">Cada pieza es fabricada individualmente a mano con piel premium de Jalisco.</p>
-
-            <!-- Buscador -->
-            <div class="buscador-wrap">
-                <input
-                    v-model="busqueda"
-                    type="text"
-                    placeholder="Buscar por nombre o tipo (ej: Billetera, Tarjetero...)"
-                    class="buscador"
-                />
-                <span v-if="busqueda" class="resultados-count">
-                    {{ productosFiltrados.length }} resultado{{ productosFiltrados.length !== 1 ? 's' : '' }}
-                </span>
+        <div class="page-header">
+            <h1 class="page-titulo">Catálogo</h1>
+            <div class="header-top">
+                <p class="header-desc">Cada pieza es fabricada individualmente a mano con piel premium de Jalisco.</p>
+                <div class="buscador-input-wrap">
+                    <PhMagnifyingGlass :size="18" class="buscador-icon" />
+                    <input
+                        v-model="busqueda"
+                        type="text"
+                        placeholder="Buscar producto o tipo..."
+                        class="buscador"
+                    />
+                    <span v-if="busqueda" class="resultados-count">
+                        {{ productosFiltrados.length }} resultado{{ productosFiltrados.length !== 1 ? 's' : '' }}
+                    </span>
+                </div>
             </div>
         </div>
 
@@ -106,16 +115,16 @@ const linkProducto = (producto: any) => {
                                 <button
                                     v-for="color in [...new Set(producto.variantes.map((v: any) => v.color).filter(Boolean))]"
                                     :key="color"
-                                    @click="seleccion[producto.id].color = color"
+                                    @click="setColor(producto.id, color)"
                                     :title="color"
                                     :class="[
                                         'bolita',
                                         color === 'Negro' ? 'bolita-negro' : 'bolita-cafe',
-                                        seleccion[producto.id].color === color ? 'bolita-activa' : ''
+                                        getSeleccion(producto.id).color === color ? 'bolita-activa' : ''
                                     ]"
                                 />
                             </div>
-                            <span class="selector-valor">{{ seleccion[producto.id].color }}</span>
+                            <span class="selector-valor">{{ getSeleccion(producto.id).color }}</span>
                         </div>
 
                         <!-- Textura -->
@@ -125,17 +134,17 @@ const linkProducto = (producto: any) => {
                                 <button
                                     v-for="textura in [...new Set(producto.variantes.map((v: any) => v.textura).filter(Boolean))]"
                                     :key="textura"
-                                    @click="seleccion[producto.id].textura = textura"
+                                    @click="setTextura(producto.id, textura)"
                                     :title="textura"
                                     :class="[
                                         'bolita-textura',
-                                        seleccion[producto.id].textura === textura ? 'bolita-textura-activa' : ''
+                                        getSeleccion(producto.id).textura === textura ? 'bolita-textura-activa' : ''
                                     ]"
                                 >
                                     {{ textura === 'Lisa' ? 'L' : 'T' }}
                                 </button>
                             </div>
-                            <span class="selector-valor">{{ seleccion[producto.id].textura }}</span>
+                            <span class="selector-valor">{{ getSeleccion(producto.id).textura }}</span>
                         </div>
                     </div>
 
@@ -164,34 +173,72 @@ const linkProducto = (producto: any) => {
 
 <style scoped>
 .catalogo-page {
-    padding: 2rem 0;
+    padding-top: 1.5rem;
 }
 
 /* ─── HEADER ─────────────────────────────────────────────────────────────── */
-.catalogo-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    padding: 0 1rem;
+.page-header {
+    padding: var(--space-lg) var(--space-lg) 0;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.page-titulo {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.header-desc {
+    font-size: 0.9rem;
+    color: #888;
+    flex: 1;
 }
 
 .buscador-wrap {
-    margin-top: 2rem;
     display: flex;
     flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.buscador-input-wrap {
+    display: flex;
     align-items: center;
     gap: 0.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 9999px;
+    padding: 0.75rem 1.25rem;
+    transition: border-color 0.2s;
+    background: white;
+    
+}
+.buscador-input-wrap:focus-within {
+    border-color: #111827;
+}
+
+.buscador-icon {
+    color: #999;
+    flex-shrink: 0;
 }
 
 .buscador {
-    width: 100%;
-    max-width: 500px;
-    padding: 0.75rem 1.25rem;
-    border: 2px solid #e5e7eb;
-    border-radius: 9999px;
+    flex: 1;
+    max-width: 300px;
+    width: 100%; 
+    border: none;
+    outline: none;
     font-size: 0.9rem;
     font-family: var(--font-main);
-    outline: none;
-    transition: border-color 0.2s;
+    background: transparent;
+    min-width: 0;
 }
 
 .buscador:focus {
@@ -201,7 +248,28 @@ const linkProducto = (producto: any) => {
 .resultados-count {
     font-size: 0.8rem;
     color: #888;
+    padding-left: 0.5rem;
 }
+
+@media (min-width: 768px) {
+
+
+    .header-top {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .buscador-input-wrap {
+        flex: 1;
+        max-width: 450px;
+    }
+    .header-desc {
+        flex: 1;
+        padding-right: 2rem;
+    }
+}
+
 
 /* ─── GRID ───────────────────────────────────────────────────────────────── */
 .grid-catalogo {
@@ -209,6 +277,7 @@ const linkProducto = (producto: any) => {
     gap: 1rem;
     grid-template-columns: 1fr;
     width: 100%;
+    padding: 0 1.5rem;
 }
 
 @media (min-width: 563px) {
@@ -320,7 +389,6 @@ const linkProducto = (producto: any) => {
     gap: 0.4rem;
 }
 
-/* Bolitas de color */
 .bolita {
     width: 20px;
     height: 20px;
@@ -339,7 +407,6 @@ const linkProducto = (producto: any) => {
     outline-offset: 2px;
 }
 
-/* Bolitas de textura */
 .bolita-textura {
     width: 28px;
     height: 20px;
@@ -427,6 +494,6 @@ const linkProducto = (producto: any) => {
     text-align: center;
     font-size: 0.75rem;
     color: #aaa;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 </style>
