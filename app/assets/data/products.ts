@@ -8,6 +8,13 @@ export interface Variante {
     precio: number; 
 }
 
+export interface ImagenesProducto {
+    'negro-lisa': string[];
+    'negro-texturizada': string[];
+    'cafe-lisa': string[] | null;
+    'cafe-texturizada': string[] | null;
+}
+
 export interface Producto {
     id: number;
     slug: string;
@@ -17,7 +24,7 @@ export interface Producto {
     materiales?: string;
     capacidad?: string;
     dimensiones?: string;
-    imgs: string[];
+    imgs: ImagenesProducto;
     variantes: Variante[]; 
 }
 
@@ -34,7 +41,21 @@ const productos: Producto[] = [
         descripcion: 'Lleva tus esenciales con sofisticación. Este clutch ha sido diseñado para quienes aprecian la estética depurada y la artesanía impecable. Fabricado en piel de vacuno de primera calidad, es el accesorio definitivo para transitar del día a la noche con estilo.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '24cm x 13.5cm',
-        imgs: ['/productos/clutch.webp', '/productos/clutch-vista-1.webp', '/productos/clutch-vista-2.webp' ],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/clutch/clutch-negro-texturizada-1.webp',
+        '/productos/clutch/clutch-negro-texturizada-2.webp',
+        '/productos/clutch/clutch-negro-texturizada-3.webp',
+        '/productos/clutch/clutch-negro-texturizada-4.webp',
+    ],
+    'negro-lisa': [
+        '/productos/clutch/clutch-negro-lisa-1.webp',
+        '/productos/clutch/clutch-negro-lisa-2.webp',
+        '/productos/clutch/clutch-negro-lisa-3.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 1,  color: 'Negro', textura: 'Lisa',        precio: 549 },
             { id: 2,  color: 'Café',  textura: 'Lisa',        precio: 549 },
