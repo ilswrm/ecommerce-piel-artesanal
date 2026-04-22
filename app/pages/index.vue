@@ -46,7 +46,7 @@ onUnmounted(() => clearInterval(intervalo))
                 </div>
                 <div class="grid-productos grid-4">
                     <article v-for="producto in primeros8" :key="producto.id" class="producto">
-                        <NuxtImg :src="producto.imgs[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
+                        <NuxtImg :src="producto.imgs['negro-texturizada']?.[0] || producto.imgs['negro-lisa']?.[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
                         <div class="contenido">
                             <h3 class="tipo-producto">{{ producto.tipo.toUpperCase() }}</h3>
                             <h2 class="product-title">{{ producto.nombre }}</h2>
@@ -86,7 +86,7 @@ onUnmounted(() => clearInterval(intervalo))
             <section class="catalogo seccion-catalogo py-12">
                 <div class="grid-productos grid-4 mt-8 ">
                     <article v-for="producto in ultimos4" :key="producto.id" class="producto">
-                        <NuxtImg :src="producto.imgs[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
+                        <NuxtImg :src="producto.imgs['negro-texturizada']?.[0] || producto.imgs['negro-lisa']?.[0]" :alt="producto.nombre" width="223" height="298" sizes="223px" format="webp" quality="70" loading="lazy" class="producto-img"/>
                         <div class="contenido">
                             <h3 class="tipo-producto">{{ producto.tipo.toUpperCase() }}</h3>
                             <h2 class="product-title">{{ producto.nombre }}</h2>

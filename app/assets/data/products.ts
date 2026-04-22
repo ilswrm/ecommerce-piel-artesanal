@@ -43,15 +43,15 @@ const productos: Producto[] = [
         dimensiones: '24cm x 13.5cm',
         imgs: {
     'negro-texturizada': [
-        '/productos/clutch/clutch-negro-texturizada-1.webp',
-        '/productos/clutch/clutch-negro-texturizada-2.webp',
-        '/productos/clutch/clutch-negro-texturizada-3.webp',
-        '/productos/clutch/clutch-negro-texturizada-4.webp',
+        '/productos/piel-negra-texturizada/clutch/clutch.webp',
+        '/productos/piel-negra-texturizada/clutch/clutch-vista-1.webp',
+        '/productos/piel-negra-texturizada/clutch/clutch-vista-2.webp',
+        '/productos/piel-negra-texturizada/clutch/clutch-vista-3.webp',
     ],
     'negro-lisa': [
-        '/productos/clutch/clutch-negro-lisa-1.webp',
-        '/productos/clutch/clutch-negro-lisa-2.webp',
-        '/productos/clutch/clutch-negro-lisa-3.webp',
+        '/productos/piel-negra-lisa/clutch/clutch.webp',
+        '/productos/piel-negra-lisa/clutch/clutch-vista-1.webp',
+        '/productos/piel-negra-lisa/clutch/clutch-vista-2.webp',
     ],
     'cafe-texturizada': null,
     'cafe-lisa': null,
@@ -73,7 +73,18 @@ const productos: Producto[] = [
         descripcion: 'Este porta laptop ha sido diseñado para el profesional moderno que valora el minimalismo sin sacrificar la protección. Confeccionado en piel genuina de grano fino, es la combinación perfecta entre una funda protectora y un maletín ligero.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '24cm x 13.5cm',
-        imgs: ['/productos/porta-laptop.webp', '/productos/porta-laptop-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/porta-laptop/porta-laptop.webp',
+        '/productos/piel-negra-texturizada/porta-laptop/porta-laptop-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/porta-laptop/porta-laptop.webp',
+        '/productos/piel-negra-lisa/porta-laptop/porta-laptop-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 5,  color: 'Negro', textura: 'Lisa',        precio: 1149 },
             { id: 6,  color: 'Café',  textura: 'Lisa',        precio: 1149 },
@@ -91,7 +102,20 @@ const productos: Producto[] = [
         descripcion: 'Este Valet Tray es la solución minimalista para mantener tus objetos personales en un solo lugar, ya sea en el recibidor de casa, en la mesa de noche o sobre tu escritorio de trabajo.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '17cm x 17cm',
-        imgs: ['/productos/tray.webp', '/productos/tray-vista-1.webp', '/productos/tray-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/tray/tray.webp',
+        '/productos/piel-negra-texturizada/tray/tray-vista-1.webp',
+        '/productos/piel-negra-texturizada/tray/tray-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/tray/tray.webp',
+        '/productos/piel-negra-lisa/tray/tray-vista-1.webp',
+        '/productos/piel-negra-lisa/tray/tray-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 9,  color: 'Negro', textura: 'Lisa',        precio: 199 },
             { id: 10, color: 'Café',  textura: 'Lisa',        precio: 199 },
@@ -109,7 +133,20 @@ const productos: Producto[] = [
         descripcion: 'Transforma una comida ordinaria en una experiencia de alta gama. Este portacubiertos artesanal es el accesorio definitivo para eventos exclusivos, picnics de lujo o para el profesional que prefiere llevar sus propios utensilios con estilo y pulcritud.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '22.5cm x 12.5cm',
-        imgs: ['/productos/set-cubiertos.webp', '/productos/set-cubiertos-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/set-cubiertos/set-cubiertos.webp',
+        '/productos/piel-negra-texturizada/set-cubiertos/set-cubiertos-vista-1.webp',
+        '/productos/piel-negra-texturizada/set-cubiertos/set-cubiertos-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/set-cubiertos/set-cubiertos.webp',
+        '/productos/piel-negra-lisa/set-cubiertos/set-cubiertos-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+}
+,
         variantes: [
             { id: 13, color: 'Negro', textura: 'Lisa',        precio: 100 },
             { id: 14, color: 'Café',  textura: 'Lisa',        precio: 100 },
@@ -127,7 +164,18 @@ const productos: Producto[] = [
         descripcion: 'Minimalista, útil y duradero. Nuestro llavero de piel vacuna queda perfecto con múltiples objetos como llaves, memorias y accesorios.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '12cm x 2cm',
-        imgs: ['/productos/llavero.webp', '/productos/llavero-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/llavero/llavero.webp',
+        '/productos/piel-negra-texturizada/llavero/llavero-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/llavero/llavero.webp',
+        '/productos/piel-negra-lisa/llavero/llavero-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 17, color: 'Negro', textura: 'Lisa',        precio: 49 },
             { id: 18, color: 'Café',  textura: 'Lisa',        precio: 49 },
@@ -145,7 +193,19 @@ const productos: Producto[] = [
         descripcion: 'Eleva tu espacio de trabajo con este desk mat de piel premium, diseñado para ofrecer una superficie suave y sofisticada que protege tu escritorio con estilo. Su estética minimalista y textura antideslizante proporcionan el equilibrio perfecto entre funcionalidad y elegancia.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: 'Grande: 55cm x 35cm | Pequeña: 35cm x 35cm',
-        imgs: ['/productos/deskmat.webp', '/productos/deskmat-vista-1.webp', '/productos/deskmat-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/deskmat/deskmat.webp',
+        '/productos/piel-negra-texturizada/deskmat/deskmat-vista-1.webp',
+        '/productos/piel-negra-texturizada/deskmat/deskmat-vista-2.webp',
+        '/productos/piel-negra-texturizada/deskmat/deskmat-vista-3.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/deskmat/deskmat.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 21, color: 'Negro', textura: 'Lisa',        tipo: '55cm x 35cm', precio: 699 },
             { id: 22, color: 'Café',  textura: 'Lisa',        tipo: '55cm x 35cm', precio: 699 },
@@ -167,7 +227,20 @@ const productos: Producto[] = [
         descripcion: 'Este tote bag fue diseñado para practicidad y un buen espacio para tus objetos incluyendo un bolsillo interno. Su silueta y acabados lo convierten en el accesorio perfecto para llevar todo lo esencial con un toque de distinción.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: 'Grande: 42cm x 35cm x 10cm | Pequeña: 33cm x 31cm x 8cm',
-        imgs: ['/productos/totes.webp', '/productos/totes-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/totes/totes.webp',
+        '/productos/piel-negra-texturizada/totes/totes-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/totes/totes.webp',
+        '/productos/piel-negra-lisa/totes/totes-vista-1.webp',
+        '/productos/piel-negra-lisa/totes/totes-vista-2.webp',
+        '/productos/piel-negra-lisa/totes/totes-vista-3.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 29, color: 'Negro', textura: 'Lisa',        tipo: 'Grande',  precio: 1549 },
             { id: 30, color: 'Café',  textura: 'Lisa',        tipo: 'Grande',  precio: 1549 },
@@ -188,7 +261,18 @@ const productos: Producto[] = [
         nombre: 'Funda Celular',
         descripcion: 'Protege tu smartphone con elegancia gracias a esta funda de piel, que no solo resguarda tu dispositivo, sino que también se transforma en un práctico stand para disfrutar de contenido multimedia cómodamente.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
-        imgs: ['/productos/funda-celular.webp', '/productos/funda-celular-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/funda-celular/funda-celular.webp',
+        '/productos/piel-negra-texturizada/funda-celular/funda-celular-vista-1.webp',
+        '/productos/piel-negra-texturizada/funda-celular/funda-celular-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/funda-celular/funda-celular.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 37, color: 'Negro', textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 159 },
             { id: 38, color: 'Café',  textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 159 },
@@ -210,7 +294,16 @@ const productos: Producto[] = [
         descripcion: 'Cinturón de piel confeccionado completamente a mano con técnicas tradicionales. Cada detalle está cuidadosamente elaborado, asegurando durabilidad, estilo y un acabado único que mejora con el uso diario.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '3.7cm de ancho',
-        imgs: ['/productos/cinturon.webp', '/productos/cinturon-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/cinturon/cinturon.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/cinturon/cinturon.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
         { id: 45, color: 'Negro', textura: 'Lisa',        tipo: 'Chica',   precio: 649 },
         { id: 46, color: 'Negro', textura: 'Lisa',        tipo: 'Mediana', precio: 649 },
@@ -237,7 +330,18 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: '5 tarjetas, papelería y 1 pasaporte',
         dimensiones: '23cm x 14cm',
-        imgs: ['/productos/porta-pasaporte.webp', '/productos/porta-pasaporte-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/porta-pasaporte/porta-pasaporte.webp',
+        '/productos/piel-negra-texturizada/porta-pasaporte/porta-pasaporte-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/porta-pasaporte/porta-pasaporte.webp',
+        '/productos/piel-negra-lisa/porta-pasaporte/porta-pasaporte-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 57, color: 'Negro', textura: 'Lisa',        precio: 529 },
             { id: 58, color: 'Café',  textura: 'Lisa',        precio: 529 },
@@ -256,7 +360,20 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: '2 bolígrafos',
         dimensiones: '18cm x 7.5cm',
-        imgs: ['/productos/porta-plumas.webp', '/productos/porta-plumas-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/porta-plumas/porta-plumas.webp',
+        '/productos/piel-negra-texturizada/porta-plumas/porta-plumas-vista-1.webp',
+        '/productos/piel-negra-texturizada/porta-plumas/porta-plumas-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/porta-plumas/porta-plumas.webp',
+        '/productos/piel-negra-lisa/porta-plumas/porta-plumas-vista-1.webp',
+        '/productos/piel-negra-lisa/porta-plumas/porta-plumas-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 61, color: 'Negro', textura: 'Lisa',        precio: 149 },
             { id: 62, color: 'Café',  textura: 'Lisa',        precio: 149 },
@@ -274,7 +391,18 @@ const productos: Producto[] = [
         descripcion: 'Organiza tus artículos esenciales con este neceser minimalista de piel con un bolsillo interno. Su estructura ligera lo convierte en el accesorio versátil ideal para mantener el orden en tu día a día.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '24cm x 17.5cm',
-        imgs: ['/productos/neceser-1.webp', '/productos/neceser-1-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/neceser-1/neceser.webp',
+        '/productos/piel-negra-texturizada/neceser-1/neceser-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/neceser-1/neceser.webp',
+        '/productos/piel-negra-lisa/neceser-1/neceser-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 65, color: 'Negro', textura: 'Lisa',        precio: 449 },
             { id: 66, color: 'Café',  textura: 'Lisa',        precio: 449 },
@@ -292,7 +420,19 @@ const productos: Producto[] = [
         descripcion: 'Organiza tus artículos esenciales con este neceser minimalista de piel con un bolsillo interno. Su estructura ligera lo convierte en el accesorio versátil ideal para mantener el orden en tu día a día con un toque de distinción.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '26cm x 20cm',
-        imgs: ['/productos/neceser-2.webp', '/productos/neceser-2-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/neceser-2/neceser-2.webp',
+        '/productos/piel-negra-texturizada/neceser-2/neceser-2-vista-1.webp',
+        '/productos/piel-negra-texturizada/neceser-2/neceser-2-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/neceser-2/neceser-2.webp',
+        '/productos/piel-negra-lisa/neceser-2/neceser-2-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 69, color: 'Negro', textura: 'Lisa',        precio: 649 },
             { id: 70, color: 'Café',  textura: 'Lisa',        precio: 649 },
@@ -310,7 +450,19 @@ const productos: Producto[] = [
         descripcion: 'Discreto y compacto, diseñado para guardarlo fácilmente en el bolsillo. Su forma triangular única lo convierte en una pieza artesanal con carácter propio.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '7cm x lado',
-        imgs: ['/productos/monedero-1.webp', '/productos/monedero-1-vista-1.webp', '/productos/monedero-1-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/monedero-1/monedero-1.webp',
+        '/productos/piel-negra-texturizada/monedero-1/monedero-1-vista-1.webp',
+        '/productos/piel-negra-texturizada/monedero-1/monedero-1-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/monedero-1/monedero-1.webp',
+        '/productos/piel-negra-lisa/monedero-1/monedero-1-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 73, color: 'Negro', textura: 'Lisa',        precio: 70 },
             { id: 74, color: 'Café',  textura: 'Lisa',        precio: 70 },
@@ -328,7 +480,20 @@ const productos: Producto[] = [
         descripcion: 'Simplifica tu día con este monedero, diseñado con un formato compacto y un broche de seguridad para mantener tus monedas y billetes organizados.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '10cm x 9cm',
-        imgs: ['/productos/monedero-2.webp', '/productos/monedero-2-vista-1.webp', '/productos/monedero-2-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/monedero-2/monedero-2.webp',
+        '/productos/piel-negra-texturizada/monedero-2/monedero-2-vista-1.webp',
+        '/productos/piel-negra-texturizada/monedero-2/monedero-2-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/monedero-2/monedero-2.webp',
+        '/productos/piel-negra-lisa/monedero-2/monedero-2-vista-1.webp',
+        '/productos/piel-negra-lisa/monedero-2/monedero-2-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 77, color: 'Negro', textura: 'Lisa',        precio: 149 },
             { id: 78, color: 'Café',  textura: 'Lisa',        precio: 149 },
@@ -346,7 +511,19 @@ const productos: Producto[] = [
         descripcion: 'Protege y organiza tus piezas favoritas con este joyero de viaje tipo roll, confeccionado en piel con compartimentos especializados para anillos, aretes y collares.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '36.5cm x 18cm',
-        imgs: ['/productos/joyero.webp', '/productos/joyero-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/joyero/joyero.webp',
+        '/productos/piel-negra-texturizada/joyero/joyero-vista-1.webp',
+        '/productos/piel-negra-texturizada/joyero/joyero-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/joyero/joyero.webp',
+        '/productos/piel-negra-lisa/joyero/joyero-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 81, color: 'Negro', textura: 'Lisa',        precio: 519 },
             { id: 82, color: 'Café',  textura: 'Lisa',        precio: 519 },
@@ -364,7 +541,20 @@ const productos: Producto[] = [
         descripcion: 'Mantén tus cables ordenados y libres de enredos con nuestros broches de piel. Diseño compacto, discreto y duradero. Ideal para organizar tu espacio de trabajo, mochila o estuche de viaje.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '9cm x 2cm',
-        imgs: ['/productos/broches.webp', '/productos/broches-vista-1.webp', '/productos/broches-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/broches/broches.webp',
+        '/productos/piel-negra-texturizada/broches/broches-vista-1.webp',
+        '/productos/piel-negra-texturizada/broches/broches-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/broches/broches.webp',
+        '/productos/piel-negra-lisa/broches/broches-vista-1.webp',
+        '/productos/piel-negra-lisa/broches/broches-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 85, color: 'Negro', textura: 'Lisa',        tipo: '3 unidades', precio: 50  },
             { id: 86, color: 'Café',  textura: 'Lisa',        tipo: '3 unidades', precio: 50  },
@@ -386,7 +576,19 @@ const productos: Producto[] = [
         descripcion: 'Diseñado para ser el protector perfecto para tus gafas: ligero y elegante, hace que proteger tus lentes sea simple y cómodo. Fabricado en piel vacuna, se adapta perfectamente a todas tus gafas.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '17cm x 7cm',
-        imgs: ['/productos/estuche-lentes.webp', '/productos/estuche-lentes-vista-1.webp', '/productos/estuche-lentes-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/estuche-lentes/estuche-lentes.webp',
+        '/productos/piel-negra-texturizada/estuche-lentes/estuche-lentes-vista-1.webp',
+        '/productos/piel-negra-texturizada/estuche-lentes/estuche-lentes-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/estuche-lentes/estuche-lentes.webp',
+        '/productos/piel-negra-lisa/estuche-lentes/estuche-lentes-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 93,  color: 'Negro', textura: 'Lisa',        precio: 169 },
             { id: 94,  color: 'Café',  textura: 'Lisa',        precio: 169 },
@@ -405,7 +607,18 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: 'Capacidad para 4 a 6 tarjetas bancarias y de presentación, con un slot para efectivo',
         dimensiones: '10cm x 7.3cm',
-        imgs: ['/productos/billetera-1.webp', '/productos/billetera-1-vista-1.webp', '/productos/billetera-1-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/billetera-1/billetera-1.webp',
+        '/productos/piel-negra-texturizada/billetera-1/billetera-1-vista-1.webp',
+        '/productos/piel-negra-texturizada/billetera-1/billetera-1-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/billetera-1/billetera-1-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 97,  color: 'Negro', textura: 'Lisa',        precio: 199 },
             { id: 98,  color: 'Café',  textura: 'Lisa',        precio: 199 },
@@ -424,7 +637,22 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: 'Capacidad para 6 a 12 tarjetas bancarias y de presentación, con un slot para efectivo',
         dimensiones: '10cm x 7.5cm',
-        imgs: ['/productos/billetera-2.webp', '/productos/billetera-2-vista-1.webp', '/productos/billetera-2-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/billetera-2/billetera-2.webp',
+        '/productos/piel-negra-texturizada/billetera-2/billetera-2-vista-1.webp',
+        '/productos/piel-negra-texturizada/billetera-2/billetera-2-vista-2.webp',
+        '/productos/piel-negra-texturizada/billetera-2/billetera-2-vista-3.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/billetera-2/billetera-2.webp',
+        '/productos/piel-negra-lisa/billetera-2/billetera-2-vista-1.webp',
+        '/productos/piel-negra-lisa/billetera-2/billetera-2-vista-2.webp',
+        '/productos/piel-negra-lisa/billetera-2/billetera-2-vista-3.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 101, color: 'Negro', textura: 'Lisa',        precio: 269 },
             { id: 102, color: 'Café',  textura: 'Lisa',        precio: 269 },
@@ -443,7 +671,19 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: '6 tarjetas y billetes',
         dimensiones: '10cm x 9.5cm',
-        imgs: ['/productos/billetera-3.webp', '/productos/billetera-3-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/billetera-3/billetera-3.webp',
+        '/productos/piel-negra-texturizada/billetera-3/billetera-3-vista-1.webp',
+        '/productos/piel-negra-texturizada/billetera-3/billetera-3-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/billetera-3/billetera-3.webp',
+        '/productos/piel-negra-lisa/billetera-3/billetera-3-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 105, color: 'Negro', textura: 'Lisa',        precio: 299 },
             { id: 106, color: 'Café',  textura: 'Lisa',        precio: 299 },
@@ -462,7 +702,20 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: '6 tarjetas y billetes',
         dimensiones: '10cm x 9.5cm',
-        imgs: ['/productos/billetera-4.webp', '/productos/billetera-4-vista-1.webp', '/productos/billetera-4-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/billetera-4/billetera-4.webp',
+        '/productos/piel-negra-texturizada/billetera-4/billetera-4-vista-1.webp',
+        '/productos/piel-negra-texturizada/billetera-4/billetera-4-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/billetera-4/billetera-4.webp',
+        '/productos/piel-negra-lisa/billetera-4/billetera-4-vista-1.webp',
+        '/productos/piel-negra-lisa/billetera-4/billetera-4-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 109, color: 'Negro', textura: 'Lisa',        precio: 349 },
             { id: 110, color: 'Café',  textura: 'Lisa',        precio: 349 },
@@ -480,7 +733,20 @@ const productos: Producto[] = [
         descripcion: 'Un esencial en todos los aspectos. Cuenta con el espacio suficiente para tus básicos de diario como tarjetas e identificaciones. Su diseño y confección minimalista lo hacen perfecto para guardar en cualquier bolsillo.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '10cm x 6cm',
-        imgs: ['/productos/tarjetero-1.webp', '/productos/tarjetero-1-vista-1.webp', '/productos/tarjetero-1-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/tarjetero-1/tarjetero-1.webp',
+        '/productos/piel-negra-texturizada/tarjetero-1/tarjetero-1-vista-1.webp',
+        '/productos/piel-negra-texturizada/tarjetero-1/tarjetero-1-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/tarjetero-1/tarjetero-1.webp',
+        '/productos/piel-negra-lisa/tarjetero-1/tarjetero-1-vista-1.webp',
+        '/productos/piel-negra-lisa/tarjetero-1/tarjetero-1-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 113, color: 'Negro', textura: 'Lisa',        precio: 149 },
             { id: 114, color: 'Café',  textura: 'Lisa',        precio: 149 },
@@ -498,7 +764,20 @@ const productos: Producto[] = [
         descripcion: 'Tarjetero clásico atemporal compacto. Cuenta con el espacio suficiente para tus básicos de diario como tarjetas y billetes. Su diseño y confección minimalista lo hacen perfecto para guardar en cualquier bolsillo.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '10cm x 7.3cm',
-        imgs: ['/productos/tarjetero-2.webp', '/productos/tarjetero-2-vista-1.webp', '/productos/tarjetero-2-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/tarjetero-2/tarjetero-2.webp',
+        '/productos/piel-negra-texturizada/tarjetero-2/tarjetero-2-vista-1.webp',
+        '/productos/piel-negra-texturizada/tarjetero-2/tarjetero-2-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/tarjetero-2/tarjetero-2.webp',
+        '/productos/piel-negra-lisa/tarjetero-2/tarjetero-2-vista-1.webp',
+        '/productos/piel-negra-lisa/tarjetero-2/tarjetero-2-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 117, color: 'Negro', textura: 'Lisa',        precio: 219 },
             { id: 118, color: 'Café',  textura: 'Lisa',        precio: 219 },
@@ -516,7 +795,18 @@ const productos: Producto[] = [
         descripcion: 'Con su silueta alargada y diseño elegante, funcional y ligera, esta cartera de piel puede albergar toda una serie de objetos personales esenciales para acompañarte todos los días.',
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         dimensiones: '21.5cm x 10.3cm',
-        imgs: ['/productos/cartera-1.webp', '/productos/cartera-1-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/cartera-1/cartera-1.webp',
+        '/productos/piel-negra-texturizada/cartera-1/cartera-1-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/cartera-1/cartera-1.webp',
+        '/productos/piel-negra-lisa/cartera-1/cartera-1-vista-1.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 121, color: 'Negro', textura: 'Lisa',        precio: 499 },
             { id: 122, color: 'Café',  textura: 'Lisa',        precio: 499 },
@@ -535,7 +825,20 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: 'Tarjeta y billetes',
         dimensiones: '18cm x 10.5cm',
-        imgs: ['/productos/cartera-2.webp', '/productos/cartera-2-vista-1.webp', '/productos/cartera-2-vista-2.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/cartera-2/cartera-2.webp',
+        '/productos/piel-negra-texturizada/cartera-2/cartera-2-vista-1.webp',
+        '/productos/piel-negra-texturizada/cartera-2/cartera-2-vista-2.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/cartera-2/cartera-2.webp',
+        '/productos/piel-negra-lisa/cartera-2/cartera-2-vista-1.webp',
+        '/productos/piel-negra-lisa/cartera-2/cartera-2-vista-2.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 125, color: 'Negro', textura: 'Lisa',        precio: 269 },
             { id: 126, color: 'Café',  textura: 'Lisa',        precio: 269 },
@@ -554,7 +857,17 @@ const productos: Producto[] = [
         materiales: 'Elaborado con piel vacuna 100% hecha a mano. Piel premium curtida artesanalmente.',
         capacidad: '2 a 4 tarjetas, billetes y papelería',
         dimensiones: '18cm x 10.5cm',
-        imgs: ['/productos/cartera-3.webp', '/productos/cartera-3-vista-1.webp'],
+        imgs: {
+    'negro-texturizada': [
+        '/productos/piel-negra-texturizada/cartera-3/cartera-3.webp',
+        '/productos/piel-negra-texturizada/cartera-3/cartera-3-vista-1.webp',
+    ],
+    'negro-lisa': [
+        '/productos/piel-negra-lisa/cartera-3/cartera-3.webp',
+    ],
+    'cafe-texturizada': null,
+    'cafe-lisa': null,
+},
         variantes: [
             { id: 129, color: 'Negro', textura: 'Lisa',        precio: 269 },
             { id: 130, color: 'Café',  textura: 'Lisa',        precio: 269 },
