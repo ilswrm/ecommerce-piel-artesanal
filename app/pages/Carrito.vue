@@ -59,7 +59,7 @@
         <!-- Header -->
         <div class="mb-8">
             <NuxtLink 
-            to="/#catalogo" 
+            to="/catalogo" 
             class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-4"
             >
             <Icon name="ph:arrow-left" size="16" />
@@ -83,7 +83,7 @@
             Agrega productos para comenzar tu compra
             </p>
             <NuxtLink 
-            to="/#catalogo" 
+            to="/catalogo" 
             class="inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
             >
             <Icon name="ph:shopping-bag" size="20" />
@@ -104,7 +104,7 @@
                 <div class="flex-shrink-0">
                     <NuxtLink :to="`/products/${item.producto.slug}`">
                     <img
-                        :src="item.producto.imgs[0]"
+                        :src="item.producto.imgs['negro-texturizada']?.[0] ?? item.producto.imgs['negro-lisa']?.[0] ?? ''"
                         :alt="item.producto.nombre"
                         class="w-24 h-24 md:w-32 md:h-32 object-cover rounded-lg"
                     />
@@ -127,12 +127,15 @@
 
                         <!-- Variantes -->
                         <div class="flex flex-wrap gap-2 mt-2">
-                        <span v-if="item.color" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                            {{ item.color }}
-                        </span>
-                        <span v-if="item.tipo" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
-                            {{ item.tipo }}
-                        </span>
+                            <span v-if="item.color" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                                {{ item.color }}
+                            </span>
+                            <span v-if="item.variante.textura" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                                {{ item.variante.textura }}
+                            </span>
+                            <span v-if="item.tipo" class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
+                                {{ item.tipo }}
+                            </span>
                         </div>
                     </div>
 

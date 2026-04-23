@@ -399,7 +399,7 @@ const setTextura = (id: number, textura: string) => {
 }
 
 .bolita-negro { background: #1a1a1a; }
-.bolita-cafe  { background: #92400e; }
+.bolita-cafe  { background: #5A382F; }
 
 .bolita-activa {
     border-color: #1a1a1a;

@@ -101,17 +101,39 @@ const decrementarCantidad = () => { if (cantidad.value > 1) cantidad.value-- }
 // ─── HELPERS ──────────────────────────────────────────────────────────────
 const obtenerColorBoton = (color: string) => {
     const map: Record<string, { bg: string, border: string, text: string }> = {
-        'Café':  { bg: 'bg-amber-800', border: 'border-amber-900', text: 'text-white' },
-        'Negro': { bg: 'bg-gray-900',  border: 'border-gray-900',  text: 'text-white' },
+        'Café':  { bg: '', border: '', text: 'text-white' },
+        'Negro': { bg: 'bg-gray-900', border: 'border-gray-900', text: 'text-white' },
     }
     return map[color] || { bg: 'bg-white', border: 'border-gray-300', text: 'text-gray-700' }
 }
 
-const obtenerMedidasTalla = (talla: string) => {
-    const medidas: Record<string, string> = {
-        'Chica': '74-82cm', 'Mediana': '82-90cm', 'Grande': '90-98.5cm',
+const obtenerInfoTipo = (tipo: string) => {
+    // Medidas de cinturón
+    const medidasCinturon: Record<string, string> = {
+        'Chica': '74-82cm',
+        'Mediana': '82-90cm',
+        'Grande': '90-98.5cm',
     }
-    return medidas[talla] || ''
+    
+    // Medidas de bolsas (totes, neceseres, etc)
+    const medidasBolsa: Record<string, string> = {
+        'Grande': '42cm x 35cm x 10cm',
+        'Pequeña': '33cm x 31cm x 8cm',
+    }
+
+    // Tallas de deskmat
+    const medidasDeskmat: Record<string, string> = {
+        '55cm x 35cm': 'Talla grande',
+        '35cm x 35cm': 'Talla chica',
+    }
+
+    const slug = producto.value.slug
+
+    if (slug === 'cinturon') return medidasCinturon[tipo] || ''
+    if (slug === 'totes') return medidasBolsa[tipo] || ''
+    if (slug === 'deskmat') return medidasDeskmat[tipo] || ''
+    
+    return ''
 }
 </script>
 
@@ -213,6 +235,9 @@ const obtenerMedidasTalla = (talla: string) => {
                             v-for="color in coloresDisponibles"
                             :key="color"
                             @click="colorSeleccionado = color"
+                            :style="colorSeleccionado === color && color === 'Café' 
+                                ? { background: '#5A382F', borderColor: '#5A382F' } 
+                                : {}"
                             :class="[
                                 'px-6 py-3 rounded-lg border-2 text-sm font-medium transition-all min-w-[100px] flex items-center justify-center gap-2',
                                 colorSeleccionado === color
@@ -220,8 +245,18 @@ const obtenerMedidasTalla = (talla: string) => {
                                     : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
                             ]"
                         >
-                            <span v-if="color === 'Café'" class="w-4 h-4 rounded-full bg-amber-800 border border-amber-900"></span>
-                            <span v-if="color === 'Negro'" class="w-4 h-4 rounded-full bg-black border border-gray-700"></span>
+                            <span 
+                                v-if="color === 'Café'" class="w-4 h-4 rounded-full border-2 flex-shrink-0" :style="colorSeleccionado === 'Café' 
+                                    ? { background: '#5A382F', borderColor: 'white' }
+                                    : { background: '#5A382F', borderColor: '#5A382F' }"
+                            ></span>
+                            <span 
+                                v-if="color === 'Negro'" 
+                                class="w-4 h-4 rounded-full border-2 flex-shrink-0"
+                                :style="colorSeleccionado === 'Negro'
+                                    ? { background: '#111827', borderColor: 'white' }
+                                    : { background: '#111827', borderColor: '#374151' }"
+                            ></span>
                             {{ color }}
                         </button>
                     </div>
@@ -264,7 +299,7 @@ const obtenerMedidasTalla = (talla: string) => {
                         >
                             <span class="font-semibold">{{ tipo }}</span>
                             <span :class="['block text-xs mt-1', tipoSeleccionado === tipo ? 'text-gray-300' : 'text-gray-500']">
-                                {{ obtenerMedidasTalla(tipo) }}
+                                {{ obtenerInfoTipo(tipo) }}
                             </span>
                         </button>
                     </div>
@@ -330,6 +365,9 @@ const obtenerMedidasTalla = (talla: string) => {
                             v-for="color in coloresDisponibles"
                             :key="color"
                             @click="colorSeleccionado = color"
+                            :style="colorSeleccionado === color && color === 'Café' 
+                                ? { background: '#5A382F', borderColor: '#5A382F' } 
+                                : {}"
                             :class="[
                                 'px-6 py-3 rounded-lg border-2 text-sm font-medium transition-all min-w-[100px] flex items-center justify-center gap-2',
                                 colorSeleccionado === color
@@ -337,8 +375,18 @@ const obtenerMedidasTalla = (talla: string) => {
                                     : 'bg-white border-gray-300 text-gray-700 hover:border-gray-400'
                             ]"
                         >
-                            <span v-if="color === 'Café'" class="w-4 h-4 rounded-full bg-amber-800 border border-amber-900"></span>
-                            <span v-if="color === 'Negro'" class="w-4 h-4 rounded-full bg-black border border-gray-700"></span>
+                            <span 
+                                v-if="color === 'Café'" class="w-4 h-4 rounded-full border-2 flex-shrink-0" :style="colorSeleccionado === 'Café' 
+                                    ? { background: '#5A382F', borderColor: 'white' }
+                                    : { background: '#5A382F', borderColor: '#5A382F' }"
+                            ></span>
+                            <span 
+                                v-if="color === 'Negro'" 
+                                class="w-4 h-4 rounded-full border-2 flex-shrink-0"
+                                :style="colorSeleccionado === 'Negro'
+                                    ? { background: '#111827', borderColor: 'white' }
+                                    : { background: '#111827', borderColor: '#374151' }"
+                            ></span>
                             {{ color }}
                         </button>
                     </div>
@@ -381,7 +429,7 @@ const obtenerMedidasTalla = (talla: string) => {
                         >
                             <span class="font-semibold">{{ tipo }}</span>
                             <span :class="['block text-xs mt-1', tipoSeleccionado === tipo ? 'text-gray-300' : 'text-gray-500']">
-                                {{ obtenerMedidasTalla(tipo) }}
+                                {{ obtenerInfoTipo(tipo) }}
                             </span>
                         </button>
                     </div>

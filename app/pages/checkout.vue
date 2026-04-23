@@ -506,7 +506,7 @@ useHead({
                 class="flex gap-3"
               >
                 <img
-                  :src="item.producto.imgs[0]"
+                  :src="item.producto.imgs['negro-texturizada']?.[0] ?? item.producto.imgs['negro-lisa']?.[0] ?? ''"
                   :alt="item.producto.nombre"
                   class="w-16 h-16 object-cover rounded-lg"
                 />
