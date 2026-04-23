@@ -264,7 +264,7 @@ const obtenerInfoTipo = (tipo: string) => {
 
                 <!-- Selector Textura -->
                 <div v-if="texturasDisponibles.length > 0" class="space-y-3">
-                    <label class="text-sm font-semibold text-gray-900">Textura: <span class="font-normal text-gray-600">{{ texturaSeleccionada }}</span></label>
+                    <label class="text-sm font-semibold text-gray-900">Tipo de piel: <span class="font-normal text-gray-600">{{ texturaSeleccionada }}</span></label>
                     <div class="flex gap-3">
                         <button
                             v-for="textura in texturasDisponibles"
@@ -394,7 +394,7 @@ const obtenerInfoTipo = (tipo: string) => {
 
                 <!-- Textura Mobile -->
                 <div v-if="texturasDisponibles.length > 0" class="space-y-3">
-                    <label class="text-sm font-semibold text-gray-900">Textura: <span class="font-normal text-gray-600">{{ texturaSeleccionada }}</span></label>
+                    <label class="text-sm font-semibold text-gray-900">Tipo de piel: <span class="font-normal text-gray-600">{{ texturaSeleccionada }}</span></label>
                     <div class="flex gap-3">
                         <button
                             v-for="textura in texturasDisponibles"

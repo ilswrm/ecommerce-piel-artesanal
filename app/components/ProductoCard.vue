@@ -63,7 +63,7 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
 
                 <!-- Textura -->
                 <div class="selector-grupo">
-                    <span class="selector-label">Textura</span>
+                    <span class="selector-label">Tipo de piel</span>
                     <div class="bolitas">
                         <button
                             v-for="textura in texturas"

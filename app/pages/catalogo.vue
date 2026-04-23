@@ -130,7 +130,7 @@ const setTextura = (id: number, textura: string) => {
 
                         <!-- Textura -->
                         <div class="selector-grupo">
-                            <span class="selector-label">Textura</span>
+                            <span class="selector-label">Tipo de piel</span>
                             <div class="bolitas">
                                 <button
                                     v-for="textura in [...new Set(producto.variantes.map((v: any) => v.textura).filter(Boolean))]"
