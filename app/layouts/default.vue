@@ -72,9 +72,8 @@ onMounted(() => {
                             <span class="absolute bottom-0 left-0 h-[1px] w-full bg-black"></span>
                         </NuxtLink>
                         <div class="mt-2"></div>
-                        <NuxtLink to="/contacto" class="font-medium relative pb-1 group nav-contacto ml-6">
+                        <NuxtLink to="/contacto" class="font-medium nav-contacto self-start">
                             Contacto
-                            <span class="absolute bottom-0 left-0 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
                         </NuxtLink>
                     </nav>
 
