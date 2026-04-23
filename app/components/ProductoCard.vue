@@ -46,6 +46,7 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
             <p class="descripcion-producto">{{ producto.descripcion }}</p>
 
             <div class="selectores">
+                <!-- Color -->
                 <div class="selector-grupo">
                     <span class="selector-label">Color</span>
                     <div class="bolitas">
@@ -59,6 +60,8 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
                     </div>
                     <span class="selector-valor">{{ seleccion.color }}</span>
                 </div>
+
+                <!-- Textura -->
                 <div class="selector-grupo">
                     <span class="selector-label">Textura</span>
                     <div class="bolitas">
@@ -66,9 +69,26 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
                             v-for="textura in texturas"
                             :key="textura"
                             @click="seleccion.textura = textura"
+                            :title="textura"
                             :class="['bolita-textura', seleccion.textura === textura ? 'bolita-textura-activa' : '']"
                         >
-                            {{ textura === 'Lisa' ? 'L' : 'T' }}
+                                <!-- Lisa: círculo sólido -->
+                                <svg v-if="textura === 'Lisa'" width="14" height="14" viewBox="0 0 20 20">
+                                    <circle cx="10" cy="10" r="8" 
+                                        :fill="seleccion.textura === 'Lisa' ? 'white' : '#aaaaaa'"
+                                    />
+                                </svg>
+
+                                <!-- Texturizada: líneas diagonales -->
+                                <svg v-else width="14" height="14" viewBox="0 0 20 20">
+                                    <circle cx="10" cy="10" r="8" 
+                                        :fill="seleccion.textura === 'Texturizada' ? '#1a1a1a' : '#aaaaaa'"
+                                    />
+                                    <line x1="4" y1="8" x2="8" y2="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                    <line x1="4" y1="13" x2="13" y2="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                    <line x1="7" y1="16" x2="16" y2="7" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                    <line x1="12" y1="16" x2="16" y2="12" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                </svg>
                         </button>
                     </div>
                     <span class="selector-valor">{{ seleccion.textura }}</span>
@@ -150,6 +170,7 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
 .selector-valor { font-size: 0.75rem; color: #555; }
 .bolitas { display: flex; gap: 0.4rem; }
 
+/* ─── BOLITAS COLOR ──────────────────────────────────────────────────────── */
 .bolita {
     width: 20px;
     height: 20px;
@@ -163,21 +184,28 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
 .bolita-cafe  { background: #5A382F; }
 .bolita-activa { outline: 2px solid #1a1a1a; outline-offset: 2px; }
 
+/* ─── BOLITAS TEXTURA ────────────────────────────────────────────────────── */
 .bolita-textura {
-    width: 28px;
-    height: 20px;
-    border-radius: 4px;
+    width: 23px;
+    height: 23px;
+    border-radius: 6px;
     border: 2px solid #e5e7eb;
     background: white;
     cursor: pointer;
-    font-size: 0.65rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #555;
     transition: all 0.2s;
 }
 
-.bolita-textura-activa { border-color: #1a1a1a; background: #1a1a1a; color: white; }
+.bolita-textura-activa {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    color: white;
+}
 
+/* ─── FOOTER CARD ────────────────────────────────────────────────────────── */
 .producto-footer { margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #f0f0f0; }
 .precio-label { font-size: 0.85rem; color: #666; margin-bottom: 0.5rem; }
 .precio-monto { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }

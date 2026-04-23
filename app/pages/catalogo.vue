@@ -47,6 +47,7 @@ const linkProducto = (producto: any) => {
     const { color, textura } = getSeleccion(producto.id)
     return `/products/${producto.slug}?color=${encodeURIComponent(color)}&textura=${encodeURIComponent(textura)}`
 }
+
 const setColor = (id: number, color: string) => {
     if (seleccion.value[id]) seleccion.value[id].color = color
 }
@@ -141,7 +142,22 @@ const setTextura = (id: number, textura: string) => {
                                         getSeleccion(producto.id).textura === textura ? 'bolita-textura-activa' : ''
                                     ]"
                                 >
-                                    {{ textura === 'Lisa' ? 'L' : 'T' }}
+                                    <!-- Lisa: círculo sólido -->
+                                    <svg v-if="textura === 'Lisa'" width="14" height="14" viewBox="0 0 20 20">
+                                        <circle cx="10" cy="10" r="8"
+                                            :fill="getSeleccion(producto.id).textura === 'Lisa' ? 'white' : '#aaaaaa'"
+                                        />
+                                    </svg>
+                                    <!-- Texturizada: líneas diagonales -->
+                                    <svg v-else width="14" height="14" viewBox="0 0 20 20">
+                                        <circle cx="10" cy="10" r="8"
+                                            :fill="getSeleccion(producto.id).textura === 'Texturizada' ? '#1a1a1a' : '#aaaaaa'"
+                                        />
+                                        <line x1="4" y1="8" x2="8" y2="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                        <line x1="4" y1="13" x2="13" y2="4" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                        <line x1="7" y1="16" x2="16" y2="7" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                        <line x1="12" y1="16" x2="16" y2="12" stroke="white" stroke-width="1.5" opacity="0.9"/>
+                                    </svg>
                                 </button>
                             </div>
                             <span class="selector-valor">{{ getSeleccion(producto.id).textura }}</span>
@@ -202,13 +218,6 @@ const setTextura = (id: number, textura: string) => {
     flex: 1;
 }
 
-.buscador-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    width: 100%;
-}
-
 .buscador-input-wrap {
     display: flex;
     align-items: center;
@@ -218,8 +227,8 @@ const setTextura = (id: number, textura: string) => {
     padding: 0.75rem 1.25rem;
     transition: border-color 0.2s;
     background: white;
-    
 }
+
 .buscador-input-wrap:focus-within {
     border-color: #111827;
 }
@@ -231,18 +240,13 @@ const setTextura = (id: number, textura: string) => {
 
 .buscador {
     flex: 1;
-    max-width: 300px;
-    width: 100%; 
+    width: 100%;
     border: none;
     outline: none;
     font-size: 0.9rem;
     font-family: var(--font-main);
     background: transparent;
     min-width: 0;
-}
-
-.buscador:focus {
-    border-color: #111827;
 }
 
 .resultados-count {
@@ -252,8 +256,6 @@ const setTextura = (id: number, textura: string) => {
 }
 
 @media (min-width: 768px) {
-
-
     .header-top {
         flex-direction: row;
         align-items: center;
@@ -264,12 +266,12 @@ const setTextura = (id: number, textura: string) => {
         flex: 1;
         max-width: 450px;
     }
+
     .header-desc {
         flex: 1;
         padding-right: 2rem;
     }
 }
-
 
 /* ─── GRID ───────────────────────────────────────────────────────────────── */
 .grid-catalogo {
@@ -304,13 +306,8 @@ const setTextura = (id: number, textura: string) => {
     transition: box-shadow 0.2s;
 }
 
-.card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-
-.card-img-wrap {
-    overflow: hidden;
-}
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.card-img-wrap { overflow: hidden; }
 
 .card-img {
     width: 100%;
@@ -320,9 +317,7 @@ const setTextura = (id: number, textura: string) => {
     transition: transform 0.4s ease;
 }
 
-.card:hover .card-img {
-    transform: scale(1.03);
-}
+.card:hover .card-img { transform: scale(1.03); }
 
 .card-body {
     padding: 1.25rem;
@@ -359,35 +354,11 @@ const setTextura = (id: number, textura: string) => {
 }
 
 /* ─── SELECTORES ─────────────────────────────────────────────────────────── */
-.selectores {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.selector-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.selector-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #999;
-    text-transform: uppercase;
-}
-
-.selector-valor {
-    font-size: 0.75rem;
-    color: #555;
-}
-
-.bolitas {
-    display: flex;
-    gap: 0.4rem;
-}
+.selectores { display: flex; gap: 1.5rem; margin-bottom: 1rem; }
+.selector-grupo { display: flex; flex-direction: column; gap: 0.3rem; }
+.selector-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; color: #999; text-transform: uppercase; }
+.selector-valor { font-size: 0.75rem; color: #555; }
+.bolitas { display: flex; gap: 0.4rem; }
 
 .bolita {
     width: 20px;
@@ -408,15 +379,16 @@ const setTextura = (id: number, textura: string) => {
 }
 
 .bolita-textura {
-    width: 28px;
-    height: 20px;
-    border-radius: 4px;
+    width: 23px;
+    height: 23px;
+    border-radius: 6px;
     border: 2px solid #e5e7eb;
     background: white;
     cursor: pointer;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
     transition: all 0.2s;
 }
 
