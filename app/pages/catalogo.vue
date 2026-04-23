@@ -63,7 +63,7 @@ const setTextura = (id: number, textura: string) => {
         <div class="page-header">
             <h1 class="page-titulo">Catálogo</h1>
             <div class="header-top">
-                <p class="header-desc">Cada pieza es fabricada individualmente a mano con piel premium de Jalisco.</p>
+                <p class="header-desc">Explora nuestra colección completa de accesorios en piel.</p>
                 <div class="buscador-input-wrap">
                     <PhMagnifyingGlass :size="18" class="buscador-icon" />
                     <input
