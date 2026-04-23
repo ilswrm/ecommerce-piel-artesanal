@@ -1,18 +1,23 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxt/ui', '@nuxt/image'],
   css: ['~/assets/css/main.css'],
-  ui: {colorMode: false, fonts: false },
+  ui: { colorMode: false, fonts: false },
   image: {
-    provider: 'none', 
-    ipx: {baseURL: '/_ipx'}
+    provider: 'none',
+    ipx: { baseURL: '/_ipx' }
   },
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE
     }
+  },
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.ico' }
+      ]
+    }
   }
-
 })
