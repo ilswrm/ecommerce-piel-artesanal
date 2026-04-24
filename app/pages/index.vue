@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 import productos from '@/assets/data/products'
 
 useHead({
-    title: 'Piel Artesanal | Inicio',
+    title: 'Home | JM Taller',
 })
 
 const idsPrimeros8 = [23, 24, 19, 20, 14, 5, 18, 17]

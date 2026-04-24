@@ -46,7 +46,7 @@
 
     //Meta tags
     useHead({
-    title: 'Carrito de Compras',
+    title: 'Carrito | JM Tallers',
     meta: [
         { name: 'description', content: 'Tu carrito de compras' }
     ]

@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'Contacto | Piel Artesanal',
+    title: 'Contacto | JM Taller',
 })
 </script>
 
@@ -21,11 +21,6 @@ useHead({
                     <a href="mailto:piel.jm.estudio@gmail.com" class="contacto-valor contacto-link">
                         piel.jm.estudio@gmail.com
                     </a>
-                </div>
-
-                <div class="contacto-info">
-                    <p class="contacto-label">Horario</p>
-                    <p class="contacto-valor">Lunes a Viernes · 9:00 AM — 6:00 PM</p>
                 </div>
 
                 <div class="contacto-info">

@@ -4,7 +4,7 @@ import productos from '@/assets/data/products'
 import { PhMagnifyingGlass } from '@phosphor-icons/vue'
 
 useHead({
-    title: 'Piel Artesanal | Catálogo',
+    title: 'Catálogo | JM Taller',
 })
 
 // ─── BUSCADOR ─────────────────────────────────────────────────────────────
@@ -89,6 +89,7 @@ const setTextura = (id: number, textura: string) => {
             >
                 <!-- Imagen reactiva -->
                 <div class="card-img-wrap">
+                    <NuxtLink :to="linkProducto(producto)">
                     <NuxtImg
                         :src="imagenActual(producto)"
                         :alt="producto.nombre"
@@ -99,6 +100,7 @@ const setTextura = (id: number, textura: string) => {
                         loading="lazy"
                         class="card-img"
                     />
+                    </NuxtLink>
                 </div>
 
                 <!-- Contenido -->

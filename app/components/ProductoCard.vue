@@ -32,6 +32,7 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
 <template>
     <article class="producto">
         <div class="producto-img-wrap">
+            <NuxtLink :to="linkProducto">
             <NuxtImg
                 :src="imagenActual"
                 :alt="producto.nombre"
@@ -39,6 +40,7 @@ const texturas = computed(() => [...new Set(props.producto.variantes.map((v: any
                 format="webp" quality="70" loading="lazy"
                 class="producto-img"
             />
+            </NuxtLink>
         </div>
         <div class="contenido">
             <h3 class="tipo-producto">{{ producto.tipo.toUpperCase() }}</h3>

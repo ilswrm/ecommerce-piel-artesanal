@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: "FAQ's | Piel Artesanal",
+    title: "FAQ's | JM Taller",
 })
 </script>
 

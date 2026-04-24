@@ -84,7 +84,7 @@ onMounted(() => {
     <NuxtPage />
     <footer class="footer">
         <div class="footer-copyright">
-            <p>© 2026 Catálogo de Piel Artesanal. Productos 100% hechos a mano en México. Todos los derechos reservados.</p>
+            <p>© 2026 Catálogo de JM Taller. Productos 100% hechos a mano en México. Todos los derechos reservados.</p>
             <p class="footer-copyright-sub">Piel premium curtida artesanalmente en Jalisco, incentivando el comercio local.</p>
         </div>
     </footer>
