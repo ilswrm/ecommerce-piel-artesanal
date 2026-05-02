@@ -93,6 +93,13 @@ const precioActual = computed(() =>
 const productoAgregado = ref(false)
 
 const añadirAlCarrito = () => {
+    trackEvent('AddToCart', {
+        content_name: producto.value.nombre,
+        content_ids: [producto.value.id.toString()],
+        content_type: 'product',
+        value: precioActual.value,
+        currency: 'MXN'
+    })
     agregarItem(
         producto.value,
         varianteSeleccionada.value,
