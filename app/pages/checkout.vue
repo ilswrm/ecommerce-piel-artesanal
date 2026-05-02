@@ -544,7 +544,11 @@ useHead({
                 Calculando...
               </span>
               <span v-else>
-                {{ formatearPrecio(costoEnvioBase) }}
+                <span v-if="costoEnvioBase === 0" class="text-green-600 font-semibold flex items-center gap-1">
+                    <Icon name="ph:truck" size="16" />
+                    Envío Gratis
+                </span>
+                <span v-else>{{ formatearPrecio(costoEnvioBase) }}</span>
               </span>
             </div>
             
