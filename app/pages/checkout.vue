@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trackEvent } from '@/utils/pixel'
 const { 
   items, 
   subtotal, 
@@ -11,17 +12,18 @@ const {
   calculandoEnvio 
 } = useCarrito()
 
-// Recargar carrito
 onMounted(() => {
-  recargarCarrito()
-})
-
-// Redirigir si el carrito está vacío SOLO al montar el componente
-// No redirigir después porque el carrito se vacía antes de ir a Stripe
-onMounted(() => {
-  if (estaVacio.value) {
-    navigateTo('/carrito')
-  }
+    recargarCarrito()
+    
+    if (estaVacio.value) {
+        navigateTo('/carrito')
+    }
+    
+    trackEvent('InitiateCheckout', {
+        value: subtotal.value,
+        currency: 'MXN',
+        num_items: items.value.length
+    })
 })
 // Datos del formulario
 const datosCliente = ref({
