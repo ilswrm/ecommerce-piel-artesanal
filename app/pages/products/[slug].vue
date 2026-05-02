@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trackEvent } from '@/utils/pixel'
 import productos, { type Producto, type Variante } from '@/assets/data/products'
 
 const route = useRoute()
@@ -11,6 +12,16 @@ const producto = computed<Producto>(() => {
         throw createError({ statusCode: 404, statusMessage: 'Producto no encontrado' })
     }
     return found
+})
+
+onMounted(() => {
+    trackEvent('ViewContent', {
+        content_name: producto.value.nombre,
+        content_ids: [producto.value.id.toString()],
+        content_type: 'product',
+        value: precioActual.value,
+        currency: 'MXN'
+    })
 })
 
 // ─── OPCIONES DISPONIBLES ─────────────────────────────────────────────────
