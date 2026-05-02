@@ -1,9 +1,9 @@
-import productos from '../../app/assets/data/products'
+import productos, { type Producto } from '../../app/assets/data/products'
 
 export default defineEventHandler((event) => {
     setHeader(event, 'Content-Type', 'application/xml')
     
-    const items = productos.map(p => {
+    const items = productos.map((p: Producto) => {
         const imagenPrincipal = p.imgs['negro-texturizada']?.[0] 
             ?? p.imgs['negro-lisa']?.[0] 
             ?? ''
