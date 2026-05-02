@@ -1,7 +1,24 @@
 <script setup lang="ts">
+
+import { trackEvent } from '@/utils/pixel'
+
+
 const route = useRoute()
 const sessionId = route.query.session_id as string
 const ordenNumero = route.query.orden as string
+
+const totalCompra = route.query.total ? parseFloat(route.query.total as string) : 0
+
+onMounted(() => {
+    if (sessionId) {
+        trackEvent('Purchase', {
+            value: totalCompra,
+            currency: 'MXN',
+            content_type: 'product',
+            transaction_id: ordenNumero
+        })
+    }
+})
 
 // En modo TEST, puede que no tengamos session_id
 // pero aún así mostramos la confirmación
