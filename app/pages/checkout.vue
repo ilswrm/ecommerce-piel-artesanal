@@ -501,7 +501,7 @@ useHead({
             </h2>
 
             <!-- Items -->
-            <div class="space-y-3 mb-6 max-h-64 overflow-y-auto">
+            <div class="items-scroll space-y-3 mb-6 max-h-64 overflow-y-auto">
               <div
                 v-for="item in items"
                 :key="`${item.producto.id}-${item.variante.id}`"
@@ -608,6 +608,21 @@ useHead({
 </template>
 
 <style scoped>
+
+.items-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.items-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.items-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
 /* Animación del spinner */
 @keyframes spin {
   to {
