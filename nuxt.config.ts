@@ -20,6 +20,7 @@ export default defineNuxtConfig({
         ],
         meta: [
             { name: 'facebook-domain-verification', content: 'gs700w0inemz892en9od9ubf2s5jh7' },
+            { name: 'google-site-verification', content: 'AsUk2jzXdW98AqSr6phaQ5sZ7FL_jh82iElK85NyN-I' },
             { property: 'og:title', content: 'JM Taller | Accesorios de Piel Premium' },
             { property: 'og:description', content: 'Accesorios artesanales de piel premium hechos a mano en México.' },
             { property: 'og:image', content: 'https://jmtaller.com/og-image.png' },
