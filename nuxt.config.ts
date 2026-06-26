@@ -1,19 +1,27 @@
+import productos from './app/assets/data/products'
+
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  modules: ['@nuxt/ui', '@nuxt/image'],
-  css: ['~/assets/css/main.css'],
-  ui: { colorMode: false, fonts: false },
-  image: {
+    compatibilityDate: '2025-07-15',
+    devtools: { enabled: true },
+    modules: ['@nuxt/ui', '@nuxt/image'],
+    css: ['~/assets/css/main.css'],
+    ui: { colorMode: false, fonts: false },
+    image: {
     provider: 'none',
     ipx: { baseURL: '/_ipx' }
-  },
-  runtimeConfig: {
+    },
+    runtimeConfig: {
     public: {
-      apiBase: process.env.NUXT_PUBLIC_API_BASE
+        apiBase: process.env.NUXT_PUBLIC_API_BASE
     }
-  },
-  app: {
+    },
+    nitro: {
+        prerender: {
+        crawlLinks: true,
+        routes: productos.map(p => `/products/${p.slug}`)
+    }
+    },
+    app: {
     head: {
         link: [
             { rel: 'icon', type: 'image/png', href: '/favicon.ico' }
