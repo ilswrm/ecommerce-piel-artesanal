@@ -16,27 +16,27 @@ onMounted(() => {
             <div class="top-bar-track">
                 <div class="top-bar-content">
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                 </div>
                 <div class="top-bar-content" aria-hidden="true">
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                     <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,599 MXN</span>
+                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
                 </div>
             </div>
     <button @click="mostrarBanner = false" class="top-bar-close">✕</button>
