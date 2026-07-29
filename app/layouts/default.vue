@@ -12,33 +12,49 @@ onMounted(() => {
 <template>
     <UApp>
         <!-- Banner envío gratis -->
-        <div v-if="mostrarBanner" class="top-bar">
-            <div class="top-bar-track">
-                <div class="top-bar-content">
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                </div>
-                <div class="top-bar-content" aria-hidden="true">
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                    <Icon name="ph:truck" size="16" />
-                    <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
-                </div>
-            </div>
+<div v-if="mostrarBanner" class="top-bar">
+    <div class="top-bar-track">
+        <div class="top-bar-content">
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+        </div>
+        <div class="top-bar-content" aria-hidden="true">
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:truck" size="16" />
+            <span>Envío gratis en pedidos mayores a $1,199 MXN</span>
+            <span class="top-bar-dot">·</span>
+            <Icon name="ph:credit-card" size="16" />
+            <span>3 y 6 meses sin intereses con tarjeta de crédito</span>
+            <span class="top-bar-dot">·</span>
+        </div>
+    </div>
     <button @click="mostrarBanner = false" class="top-bar-close">✕</button>
 </div>
             <UHeader class="h-24">
@@ -135,6 +151,11 @@ nav a.router-link-active span {
     letter-spacing: 0.5px;
     position: relative;
     overflow: hidden;
+}
+
+.top-bar-dot {
+    opacity: 0.4;
+    font-size: 1rem;
 }
 
 .top-bar-track {

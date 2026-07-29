@@ -176,6 +176,10 @@ const obtenerInfoTipo = (tipo: string) => {
                 </div>
                 <h1 class="text-3xl font-bold text-gray-900">{{ producto.nombre }}</h1>
                 <p class="text-lg text-gray-600">Precio: <span class="text-3xl font-bold text-gray-900">${{ precioActual }} MXN</span></p>
+                <div class="msi-badge">
+                    <Icon name="ph:credit-card" size="15" />
+                    <span>3 MSI desde $1,500 · 6 MSI desde $2,500 con tarjeta de crédito</span>
+                </div>
                 <p class="text-gray-600 leading-relaxed mt-2">{{ producto.descripcion }}</p>
             </div>
 
@@ -241,6 +245,10 @@ const obtenerInfoTipo = (tipo: string) => {
 
                 <div class="border-y border-gray-200 py-4">
                     <p class="text-lg text-gray-600">Precio: <span class="text-4xl font-bold text-gray-900">${{ precioActual }} MXN</span></p>
+                <div class="msi-badge">
+                    <Icon name="ph:credit-card" size="15" />
+                    <span>3 MSI desde $1,500 · 6 MSI desde $2,500 con tarjeta de crédito</span>
+                </div>
                 </div>
 
                 <p class="text-gray-600 leading-relaxed text-lg">{{ producto.descripcion }}</p>
@@ -508,6 +516,24 @@ const obtenerInfoTipo = (tipo: string) => {
 </template>
 
 <style scoped>
+.msi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    color: #15803d;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    letter-spacing: 0.01em;
+}
+
+.msi-badge strong {
+    font-weight: 700;
+}
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { scrollbar-width: none; }
 

@@ -480,16 +480,20 @@ useHead({
 
             <!-- Botón submit (mobile) -->
             <button
-              type="submit"
-              :disabled="procesando"
-              class="lg:hidden w-full bg-gray-900 text-white py-4 rounded-lg font-semibold hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
+                type="submit"
+                :disabled="procesando"
+                class="lg:hidden w-full bg-gray-900 text-white py-4 rounded-lg font-semibold hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
             >
-              <span v-if="!procesando">Proceder al pago</span>
-              <span v-else class="flex items-center justify-center gap-2">
-                <Icon name="ph:spinner" size="20" class="animate-spin" />
-                Procesando...
-              </span>
+                <span v-if="!procesando">Proceder al pago</span>
+                <span v-else class="flex items-center justify-center gap-2">
+                    <Icon name="ph:spinner" size="20" class="animate-spin" />
+                    Procesando...
+                </span>
             </button>
+            <div class="msi-badge-checkout mt-3 lg:hidden">
+                <Icon name="ph:credit-card" size="15" />
+                <span>3 MSI desde $1,500 · 6 MSI desde $2,500 con tarjeta de crédito</span>
+            </div>
           </form>
         </div>
 
@@ -578,16 +582,20 @@ useHead({
 
           <!-- Botón submit (desktop) -->
           <button
-            @click="procesarPago"
-            :disabled="procesando"
-            class="hidden lg:block w-full bg-gray-900 text-white py-4 rounded-lg font-semibold hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
+              @click="procesarPago"
+              :disabled="procesando"
+              class="hidden lg:block w-full bg-gray-900 text-white py-4 rounded-lg font-semibold hover:bg-gray-800 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors shadow-lg"
           >
-            <span v-if="!procesando">Proceder al pago</span>
-            <span v-else class="flex items-center justify-center gap-2">
-              <Icon name="ph:spinner" size="20" class="animate-spin" />
-              Procesando...
-            </span>
+              <span v-if="!procesando">Proceder al pago</span>
+              <span v-else class="flex items-center justify-center gap-2">
+                  <Icon name="ph:spinner" size="20" class="animate-spin" />
+                  Procesando...
+              </span>
           </button>
+          <div class="msi-badge-checkout mt-3 hidden lg:flex">
+              <Icon name="ph:credit-card" size="15" />
+              <span>3 MSI desde $1,500 · 6 MSI desde $2,500 con tarjeta de crédito</span>
+          </div>
 
             <!-- Info de seguridad -->
             <div class="mt-6 space-y-2 text-xs text-gray-600">
@@ -609,6 +617,20 @@ useHead({
 
 <style scoped>
 
+.msi-badge-checkout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    color: #15803d;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
 .items-scroll::-webkit-scrollbar {
     width: 4px;
 }
