@@ -57,10 +57,10 @@ const productos: Producto[] = [
     'cafe-lisa': null,
 },
         variantes: [
-            { id: 1,  color: 'Negro', textura: 'Lisa',        precio: 549 },
-            { id: 2,  color: 'Café',  textura: 'Lisa',        precio: 549 },
-            { id: 3,  color: 'Negro', textura: 'Texturizada', precio: 549 },
-            { id: 4,  color: 'Café',  textura: 'Texturizada', precio: 549 },
+            { id: 1,  color: 'Negro', textura: 'Lisa',        precio: 929 },
+            { id: 2,  color: 'Café',  textura: 'Lisa',        precio: 929 },
+            { id: 3,  color: 'Negro', textura: 'Texturizada', precio: 929 },
+            { id: 4,  color: 'Café',  textura: 'Texturizada', precio: 929 },
         ]
     },
 
@@ -85,11 +85,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 5,  color: 'Negro', textura: 'Lisa',        precio: 1149 },
-            { id: 6,  color: 'Café',  textura: 'Lisa',        precio: 1149 },
-            { id: 7,  color: 'Negro', textura: 'Texturizada', precio: 1149 },
-            { id: 8,  color: 'Café',  textura: 'Texturizada', precio: 1149 },
+                variantes: [
+            { id: 5,  color: 'Negro', textura: 'Lisa',        precio: 1699 },
+            { id: 6,  color: 'Café',  textura: 'Lisa',        precio: 1699 },
+            { id: 7,  color: 'Negro', textura: 'Texturizada', precio: 1699 },
+            { id: 8,  color: 'Café',  textura: 'Texturizada', precio: 1699 },
         ]
     },
 
@@ -116,11 +116,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 9,  color: 'Negro', textura: 'Lisa',        precio: 199 },
-            { id: 10, color: 'Café',  textura: 'Lisa',        precio: 199 },
-            { id: 11, color: 'Negro', textura: 'Texturizada', precio: 199 },
-            { id: 12, color: 'Café',  textura: 'Texturizada', precio: 199 },
+                variantes: [
+            { id: 9,  color: 'Negro', textura: 'Lisa',        precio: 239 },
+            { id: 10, color: 'Café',  textura: 'Lisa',        precio: 239 },
+            { id: 11, color: 'Negro', textura: 'Texturizada', precio: 239 },
+            { id: 12, color: 'Café',  textura: 'Texturizada', precio: 239 },
         ]
     },
 
@@ -148,10 +148,10 @@ const productos: Producto[] = [
 }
 ,
         variantes: [
-            { id: 13, color: 'Negro', textura: 'Lisa',        precio: 100 },
-            { id: 14, color: 'Café',  textura: 'Lisa',        precio: 100 },
-            { id: 15, color: 'Negro', textura: 'Texturizada', precio: 100 },
-            { id: 16, color: 'Café',  textura: 'Texturizada', precio: 100 },
+            { id: 13, color: 'Negro', textura: 'Lisa',        precio: 99 },
+            { id: 14, color: 'Café',  textura: 'Lisa',        precio: 99 },
+            { id: 15, color: 'Negro', textura: 'Texturizada', precio: 99 },
+            { id: 16, color: 'Café',  textura: 'Texturizada', precio: 99 },
         ]
     },
 
@@ -177,10 +177,10 @@ const productos: Producto[] = [
     'cafe-lisa': null,
 },
         variantes: [
-            { id: 17, color: 'Negro', textura: 'Lisa',        precio: 49 },
-            { id: 18, color: 'Café',  textura: 'Lisa',        precio: 49 },
-            { id: 19, color: 'Negro', textura: 'Texturizada', precio: 49 },
-            { id: 20, color: 'Café',  textura: 'Texturizada', precio: 49 },
+            { id: 17, color: 'Negro', textura: 'Lisa',        precio: 79 },
+            { id: 18, color: 'Café',  textura: 'Lisa',        precio: 79 },
+            { id: 19, color: 'Negro', textura: 'Texturizada', precio: 79 },
+            { id: 20, color: 'Café',  textura: 'Texturizada', precio: 79 },
         ]
     },
 
@@ -206,16 +206,17 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 21, color: 'Negro', textura: 'Lisa',        tipo: '55cm x 35cm', precio: 699 },
-            { id: 22, color: 'Café',  textura: 'Lisa',        tipo: '55cm x 35cm', precio: 699 },
-            { id: 23, color: 'Negro', textura: 'Texturizada', tipo: '55cm x 35cm', precio: 699 },
-            { id: 24, color: 'Café',  textura: 'Texturizada', tipo: '55cm x 35cm', precio: 699 },
-            { id: 25, color: 'Negro', textura: 'Lisa',        tipo: '35cm x 35cm', precio: 469 },
-            { id: 26, color: 'Café',  textura: 'Lisa',        tipo: '35cm x 35cm', precio: 469 },
-            { id: 27, color: 'Negro', textura: 'Texturizada', tipo: '35cm x 35cm', precio: 469 },
-            { id: 28, color: 'Café',  textura: 'Texturizada', tipo: '35cm x 35cm', precio: 469 },
+                variantes: [
+            { id: 21, color: 'Negro', textura: 'Lisa',        tipo: '55cm x 35cm', precio: 1399 },
+            { id: 22, color: 'Café',  textura: 'Lisa',        tipo: '55cm x 35cm', precio: 1399 },
+            { id: 23, color: 'Negro', textura: 'Texturizada', tipo: '55cm x 35cm', precio: 1399 },
+            { id: 24, color: 'Café',  textura: 'Texturizada', tipo: '55cm x 35cm', precio: 1399 },
+            { id: 25, color: 'Negro', textura: 'Lisa',        tipo: '35cm x 35cm', precio: 899 },
+            { id: 26, color: 'Café',  textura: 'Lisa',        tipo: '35cm x 35cm', precio: 899 },
+            { id: 27, color: 'Negro', textura: 'Texturizada', tipo: '35cm x 35cm', precio: 899 },
+            { id: 28, color: 'Café',  textura: 'Texturizada', tipo: '35cm x 35cm', precio: 899 },
         ]
+
     },
 
     // ─── 7. TOTES ────────────────────────────────────────────────────────────
@@ -241,15 +242,15 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 29, color: 'Negro', textura: 'Lisa',        tipo: 'Grande',  precio: 1549 },
-            { id: 30, color: 'Café',  textura: 'Lisa',        tipo: 'Grande',  precio: 1549 },
-            { id: 31, color: 'Negro', textura: 'Texturizada', tipo: 'Grande',  precio: 1549 },
-            { id: 32, color: 'Café',  textura: 'Texturizada', tipo: 'Grande',  precio: 1549 },
-            { id: 33, color: 'Negro', textura: 'Lisa',        tipo: 'Pequeña', precio: 1149 },
-            { id: 34, color: 'Café',  textura: 'Lisa',        tipo: 'Pequeña', precio: 1149 },
-            { id: 35, color: 'Negro', textura: 'Texturizada', tipo: 'Pequeña', precio: 1149 },
-            { id: 36, color: 'Café',  textura: 'Texturizada', tipo: 'Pequeña', precio: 1149 },
+                variantes: [
+            { id: 29, color: 'Negro', textura: 'Lisa',        tipo: 'Grande',  precio: 2499 },
+            { id: 30, color: 'Café',  textura: 'Lisa',        tipo: 'Grande',  precio: 2499 },
+            { id: 31, color: 'Negro', textura: 'Texturizada', tipo: 'Grande',  precio: 2499 },
+            { id: 32, color: 'Café',  textura: 'Texturizada', tipo: 'Grande',  precio: 2499 },
+            { id: 33, color: 'Negro', textura: 'Lisa',        tipo: 'Pequeña', precio: 1399 },
+            { id: 34, color: 'Café',  textura: 'Lisa',        tipo: 'Pequeña', precio: 1399 },
+            { id: 35, color: 'Negro', textura: 'Texturizada', tipo: 'Pequeña', precio: 1399 },
+            { id: 36, color: 'Café',  textura: 'Texturizada', tipo: 'Pequeña', precio: 1399 },
         ]
     },
 
@@ -273,19 +274,19 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 37, color: 'Negro', textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 159 },
-            { id: 38, color: 'Café',  textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 159 },
-            { id: 39, color: 'Negro', textura: 'Texturizada', tipo: 'iPhone 17 y similares',         precio: 159 },
-            { id: 40, color: 'Café',  textura: 'Texturizada', tipo: 'iPhone 17 y similares',         precio: 159 },
-            { id: 41, color: 'Negro', textura: 'Lisa',        tipo: 'iPhone 17 Pro Max y similares', precio: 159 },
-            { id: 42, color: 'Café',  textura: 'Lisa',        tipo: 'iPhone 17 Pro Max y similares', precio: 159 },
-            { id: 43, color: 'Negro', textura: 'Texturizada', tipo: 'iPhone 17 Pro Max y similares', precio: 159 },
-            { id: 44, color: 'Café',  textura: 'Texturizada', tipo: 'iPhone 17 Pro Max y similares', precio: 159 },
+                variantes: [
+            { id: 37, color: 'Negro', textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 199 },
+            { id: 38, color: 'Café',  textura: 'Lisa',        tipo: 'iPhone 17 y similares',         precio: 199 },
+            { id: 39, color: 'Negro', textura: 'Texturizada', tipo: 'iPhone 17 y similares',         precio: 199 },
+            { id: 40, color: 'Café',  textura: 'Texturizada', tipo: 'iPhone 17 y similares',         precio: 199 },
+            { id: 41, color: 'Negro', textura: 'Lisa',        tipo: 'iPhone 17 Pro Max y similares', precio: 199 },
+            { id: 42, color: 'Café',  textura: 'Lisa',        tipo: 'iPhone 17 Pro Max y similares', precio: 199 },
+            { id: 43, color: 'Negro', textura: 'Texturizada', tipo: 'iPhone 17 Pro Max y similares', precio: 199 },
+            { id: 44, color: 'Café',  textura: 'Texturizada', tipo: 'iPhone 17 Pro Max y similares', precio: 199 },
         ]
     },
 
-    // ─── 9. CINTURÓN ─────────────────────────────────────────────────────────
+    // ─── 9. CINTURÓN (solo liso) ─────────────────────────────────────────────────────────
     {
         id: 9,
         slug: 'cinturon',
@@ -304,20 +305,14 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-        { id: 45, color: 'Negro', textura: 'Lisa',        tipo: 'Chica',   precio: 649 },
-        { id: 46, color: 'Negro', textura: 'Lisa',        tipo: 'Mediana', precio: 649 },
-        { id: 47, color: 'Negro', textura: 'Lisa',        tipo: 'Grande',  precio: 649 },
-        { id: 48, color: 'Café',  textura: 'Lisa',        tipo: 'Chica',   precio: 649 },
-        { id: 49, color: 'Café',  textura: 'Lisa',        tipo: 'Mediana', precio: 649 },
-        { id: 50, color: 'Café',  textura: 'Lisa',        tipo: 'Grande',  precio: 649 },
-        { id: 51, color: 'Negro', textura: 'Texturizada', tipo: 'Chica',   precio: 649 },
-        { id: 52, color: 'Negro', textura: 'Texturizada', tipo: 'Mediana', precio: 649 },
-        { id: 53, color: 'Negro', textura: 'Texturizada', tipo: 'Grande',  precio: 649 },
-        { id: 54, color: 'Café',  textura: 'Texturizada', tipo: 'Chica',   precio: 649 },
-        { id: 55, color: 'Café',  textura: 'Texturizada', tipo: 'Mediana', precio: 649 },
-        { id: 56, color: 'Café',  textura: 'Texturizada', tipo: 'Grande',  precio: 649 },
-    ]
+                variantes: [
+            { id: 45, color: 'Negro', textura: 'Lisa', tipo: 'Chica',   precio: 899 },
+            { id: 46, color: 'Negro', textura: 'Lisa', tipo: 'Mediana', precio: 899 },
+            { id: 47, color: 'Negro', textura: 'Lisa', tipo: 'Grande',  precio: 899 },
+            { id: 48, color: 'Café',  textura: 'Lisa', tipo: 'Chica',   precio: 899 },
+            { id: 49, color: 'Café',  textura: 'Lisa', tipo: 'Mediana', precio: 899 },
+            { id: 50, color: 'Café',  textura: 'Lisa', tipo: 'Grande',  precio: 899 },
+        ]
     },
 
      // ─── 10. PORTA PASAPORTE ─────────────────────────────────────────────────
@@ -342,11 +337,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 57, color: 'Negro', textura: 'Lisa',        precio: 529 },
-            { id: 58, color: 'Café',  textura: 'Lisa',        precio: 529 },
-            { id: 59, color: 'Negro', textura: 'Texturizada', precio: 529 },
-            { id: 60, color: 'Café',  textura: 'Texturizada', precio: 529 },
+                variantes: [
+            { id: 57, color: 'Negro', textura: 'Lisa',        precio: 749 },
+            { id: 58, color: 'Café',  textura: 'Lisa',        precio: 749 },
+            { id: 59, color: 'Negro', textura: 'Texturizada', precio: 749 },
+            { id: 60, color: 'Café',  textura: 'Texturizada', precio: 749 },
         ]
     },
 
@@ -374,11 +369,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 61, color: 'Negro', textura: 'Lisa',        precio: 149 },
-            { id: 62, color: 'Café',  textura: 'Lisa',        precio: 149 },
-            { id: 63, color: 'Negro', textura: 'Texturizada', precio: 149 },
-            { id: 64, color: 'Café',  textura: 'Texturizada', precio: 149 },
+                variantes: [
+            { id: 61, color: 'Negro', textura: 'Lisa',        precio: 219 },
+            { id: 62, color: 'Café',  textura: 'Lisa',        precio: 219 },
+            { id: 63, color: 'Negro', textura: 'Texturizada', precio: 219 },
+            { id: 64, color: 'Café',  textura: 'Texturizada', precio: 219 },
         ]
     },
 
@@ -403,11 +398,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 65, color: 'Negro', textura: 'Lisa',        precio: 449 },
-            { id: 66, color: 'Café',  textura: 'Lisa',        precio: 449 },
-            { id: 67, color: 'Negro', textura: 'Texturizada', precio: 449 },
-            { id: 68, color: 'Café',  textura: 'Texturizada', precio: 449 },
+                variantes: [
+            { id: 65, color: 'Negro', textura: 'Lisa',        precio: 729 },
+            { id: 66, color: 'Café',  textura: 'Lisa',        precio: 729 },
+            { id: 67, color: 'Negro', textura: 'Texturizada', precio: 729 },
+            { id: 68, color: 'Café',  textura: 'Texturizada', precio: 729 },
         ]
     },
 
@@ -433,11 +428,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 69, color: 'Negro', textura: 'Lisa',        precio: 649 },
-            { id: 70, color: 'Café',  textura: 'Lisa',        precio: 649 },
-            { id: 71, color: 'Negro', textura: 'Texturizada', precio: 649 },
-            { id: 72, color: 'Café',  textura: 'Texturizada', precio: 649 },
+                variantes: [
+            { id: 69, color: 'Negro', textura: 'Lisa',        precio: 1399 },
+            { id: 70, color: 'Café',  textura: 'Lisa',        precio: 1399 },
+            { id: 71, color: 'Negro', textura: 'Texturizada', precio: 1399 },
+            { id: 72, color: 'Café',  textura: 'Texturizada', precio: 1399 },
         ]
     },
 
@@ -463,11 +458,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 73, color: 'Negro', textura: 'Lisa',        precio: 70 },
-            { id: 74, color: 'Café',  textura: 'Lisa',        precio: 70 },
-            { id: 75, color: 'Negro', textura: 'Texturizada', precio: 70 },
-            { id: 76, color: 'Café',  textura: 'Texturizada', precio: 70 },
+                variantes: [
+            { id: 73, color: 'Negro', textura: 'Lisa',        precio: 99 },
+            { id: 74, color: 'Café',  textura: 'Lisa',        precio: 99 },
+            { id: 75, color: 'Negro', textura: 'Texturizada', precio: 99 },
+            { id: 76, color: 'Café',  textura: 'Texturizada', precio: 99 },
         ]
     },
 
@@ -494,11 +489,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 77, color: 'Negro', textura: 'Lisa',        precio: 149 },
-            { id: 78, color: 'Café',  textura: 'Lisa',        precio: 149 },
-            { id: 79, color: 'Negro', textura: 'Texturizada', precio: 149 },
-            { id: 80, color: 'Café',  textura: 'Texturizada', precio: 149 },
+                variantes: [
+            { id: 77, color: 'Negro', textura: 'Lisa',        precio: 199 },
+            { id: 78, color: 'Café',  textura: 'Lisa',        precio: 199 },
+            { id: 79, color: 'Negro', textura: 'Texturizada', precio: 199 },
+            { id: 80, color: 'Café',  textura: 'Texturizada', precio: 199 },
         ]
     },
 
@@ -524,11 +519,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 81, color: 'Negro', textura: 'Lisa',        precio: 519 },
-            { id: 82, color: 'Café',  textura: 'Lisa',        precio: 519 },
-            { id: 83, color: 'Negro', textura: 'Texturizada', precio: 519 },
-            { id: 84, color: 'Café',  textura: 'Texturizada', precio: 519 },
+                variantes: [
+            { id: 81, color: 'Negro', textura: 'Lisa',        precio: 949 },
+            { id: 82, color: 'Café',  textura: 'Lisa',        precio: 949 },
+            { id: 83, color: 'Negro', textura: 'Texturizada', precio: 949 },
+            { id: 84, color: 'Café',  textura: 'Texturizada', precio: 949 },
         ]
     },
 
@@ -555,15 +550,15 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 85, color: 'Negro', textura: 'Lisa',        tipo: '3 unidades', precio: 50  },
-            { id: 86, color: 'Café',  textura: 'Lisa',        tipo: '3 unidades', precio: 50  },
-            { id: 87, color: 'Negro', textura: 'Texturizada', tipo: '3 unidades', precio: 50  },
-            { id: 88, color: 'Café',  textura: 'Texturizada', tipo: '3 unidades', precio: 50  },
-            { id: 89, color: 'Negro', textura: 'Lisa',        tipo: '7 unidades', precio: 100 },
-            { id: 90, color: 'Café',  textura: 'Lisa',        tipo: '7 unidades', precio: 100 },
-            { id: 91, color: 'Negro', textura: 'Texturizada', tipo: '7 unidades', precio: 100 },
-            { id: 92, color: 'Café',  textura: 'Texturizada', tipo: '7 unidades', precio: 100 },
+                variantes: [
+            { id: 85, color: 'Negro', textura: 'Lisa',        tipo: '5 unidades', precio: 69  },
+            { id: 86, color: 'Café',  textura: 'Lisa',        tipo: '5 unidades', precio: 69  },
+            { id: 87, color: 'Negro', textura: 'Texturizada', tipo: '5 unidades', precio: 69  },
+            { id: 88, color: 'Café',  textura: 'Texturizada', tipo: '5 unidades', precio: 69  },
+            { id: 89, color: 'Negro', textura: 'Lisa',        tipo: '7 unidades', precio: 119 },
+            { id: 90, color: 'Café',  textura: 'Lisa',        tipo: '7 unidades', precio: 119 },
+            { id: 91, color: 'Negro', textura: 'Texturizada', tipo: '7 unidades', precio: 119 },
+            { id: 92, color: 'Café',  textura: 'Texturizada', tipo: '7 unidades', precio: 119 },
         ]
     },
 
@@ -589,11 +584,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 93,  color: 'Negro', textura: 'Lisa',        precio: 169 },
-            { id: 94,  color: 'Café',  textura: 'Lisa',        precio: 169 },
-            { id: 95,  color: 'Negro', textura: 'Texturizada', precio: 169 },
-            { id: 96,  color: 'Café',  textura: 'Texturizada', precio: 169 },
+                variantes: [
+            { id: 93,  color: 'Negro', textura: 'Lisa',        precio: 289 },
+            { id: 94,  color: 'Café',  textura: 'Lisa',        precio: 289 },
+            { id: 95,  color: 'Negro', textura: 'Texturizada', precio: 289 },
+            { id: 96,  color: 'Café',  textura: 'Texturizada', precio: 289 },
         ]
     },
 
@@ -619,11 +614,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 97,  color: 'Negro', textura: 'Lisa',        precio: 199 },
-            { id: 98,  color: 'Café',  textura: 'Lisa',        precio: 199 },
-            { id: 99,  color: 'Negro', textura: 'Texturizada', precio: 199 },
-            { id: 100, color: 'Café',  textura: 'Texturizada', precio: 199 },
+                variantes: [
+            { id: 97,  color: 'Negro', textura: 'Lisa',        precio: 299 },
+            { id: 98,  color: 'Café',  textura: 'Lisa',        precio: 299 },
+            { id: 99,  color: 'Negro', textura: 'Texturizada', precio: 299 },
+            { id: 100, color: 'Café',  textura: 'Texturizada', precio: 299 },
         ]
     },
 
@@ -653,11 +648,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 101, color: 'Negro', textura: 'Lisa',        precio: 269 },
-            { id: 102, color: 'Café',  textura: 'Lisa',        precio: 269 },
-            { id: 103, color: 'Negro', textura: 'Texturizada', precio: 269 },
-            { id: 104, color: 'Café',  textura: 'Texturizada', precio: 269 },
+                variantes: [
+            { id: 101, color: 'Negro', textura: 'Lisa',        precio: 399 },
+            { id: 102, color: 'Café',  textura: 'Lisa',        precio: 399 },
+            { id: 103, color: 'Negro', textura: 'Texturizada', precio: 399 },
+            { id: 104, color: 'Café',  textura: 'Texturizada', precio: 399 },
         ]
     },
 
@@ -684,11 +679,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 105, color: 'Negro', textura: 'Lisa',        precio: 299 },
-            { id: 106, color: 'Café',  textura: 'Lisa',        precio: 299 },
-            { id: 107, color: 'Negro', textura: 'Texturizada', precio: 299 },
-            { id: 108, color: 'Café',  textura: 'Texturizada', precio: 299 },
+                variantes: [
+            { id: 105, color: 'Negro', textura: 'Lisa',        precio: 459 },
+            { id: 106, color: 'Café',  textura: 'Lisa',        precio: 459 },
+            { id: 107, color: 'Negro', textura: 'Texturizada', precio: 459 },
+            { id: 108, color: 'Café',  textura: 'Texturizada', precio: 459 },
         ]
     },
 
@@ -717,10 +712,10 @@ const productos: Producto[] = [
     'cafe-lisa': null,
 },
         variantes: [
-            { id: 109, color: 'Negro', textura: 'Lisa',        precio: 349 },
-            { id: 110, color: 'Café',  textura: 'Lisa',        precio: 349 },
-            { id: 111, color: 'Negro', textura: 'Texturizada', precio: 349 },
-            { id: 112, color: 'Café',  textura: 'Texturizada', precio: 349 },
+            { id: 109, color: 'Negro', textura: 'Lisa',        precio: 499 },
+            { id: 110, color: 'Café',  textura: 'Lisa',        precio: 499 },
+            { id: 111, color: 'Negro', textura: 'Texturizada', precio: 499 },
+            { id: 112, color: 'Café',  textura: 'Texturizada', precio: 499 },
         ]
     },
 
@@ -747,11 +742,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 113, color: 'Negro', textura: 'Lisa',        precio: 149 },
-            { id: 114, color: 'Café',  textura: 'Lisa',        precio: 149 },
-            { id: 115, color: 'Negro', textura: 'Texturizada', precio: 149 },
-            { id: 116, color: 'Café',  textura: 'Texturizada', precio: 149 },
+                variantes: [
+            { id: 113, color: 'Negro', textura: 'Lisa',        precio: 219 },
+            { id: 114, color: 'Café',  textura: 'Lisa',        precio: 219 },
+            { id: 115, color: 'Negro', textura: 'Texturizada', precio: 219 },
+            { id: 116, color: 'Café',  textura: 'Texturizada', precio: 219 },
         ]
     },
 
@@ -778,11 +773,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 117, color: 'Negro', textura: 'Lisa',        precio: 219 },
-            { id: 118, color: 'Café',  textura: 'Lisa',        precio: 219 },
-            { id: 119, color: 'Negro', textura: 'Texturizada', precio: 219 },
-            { id: 120, color: 'Café',  textura: 'Texturizada', precio: 219 },
+                variantes: [
+            { id: 117, color: 'Negro', textura: 'Lisa',        precio: 319 },
+            { id: 118, color: 'Café',  textura: 'Lisa',        precio: 319 },
+            { id: 119, color: 'Negro', textura: 'Texturizada', precio: 319 },
+            { id: 120, color: 'Café',  textura: 'Texturizada', precio: 319 },
         ]
     },
 
@@ -807,11 +802,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 121, color: 'Negro', textura: 'Lisa',        precio: 499 },
-            { id: 122, color: 'Café',  textura: 'Lisa',        precio: 499 },
-            { id: 123, color: 'Negro', textura: 'Texturizada', precio: 499 },
-            { id: 124, color: 'Café',  textura: 'Texturizada', precio: 499 },
+                variantes: [
+            { id: 121, color: 'Negro', textura: 'Lisa',        precio: 949 },
+            { id: 122, color: 'Café',  textura: 'Lisa',        precio: 949 },
+            { id: 123, color: 'Negro', textura: 'Texturizada', precio: 949 },
+            { id: 124, color: 'Café',  textura: 'Texturizada', precio: 949 },
         ]
     },
 
@@ -839,11 +834,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 125, color: 'Negro', textura: 'Lisa',        precio: 269 },
-            { id: 126, color: 'Café',  textura: 'Lisa',        precio: 269 },
-            { id: 127, color: 'Negro', textura: 'Texturizada', precio: 269 },
-            { id: 128, color: 'Café',  textura: 'Texturizada', precio: 269 },
+                variantes: [
+            { id: 125, color: 'Negro', textura: 'Lisa',        precio: 479 },
+            { id: 126, color: 'Café',  textura: 'Lisa',        precio: 479 },
+            { id: 127, color: 'Negro', textura: 'Texturizada', precio: 479 },
+            { id: 128, color: 'Café',  textura: 'Texturizada', precio: 479 },
         ]
     },
 
@@ -868,11 +863,11 @@ const productos: Producto[] = [
     'cafe-texturizada': null,
     'cafe-lisa': null,
 },
-        variantes: [
-            { id: 129, color: 'Negro', textura: 'Lisa',        precio: 269 },
-            { id: 130, color: 'Café',  textura: 'Lisa',        precio: 269 },
-            { id: 131, color: 'Negro', textura: 'Texturizada', precio: 269 },
-            { id: 132, color: 'Café',  textura: 'Texturizada', precio: 269 },
+                variantes: [
+            { id: 129, color: 'Negro', textura: 'Lisa',        precio: 419 },
+            { id: 130, color: 'Café',  textura: 'Lisa',        precio: 419 },
+            { id: 131, color: 'Negro', textura: 'Texturizada', precio: 419 },
+            { id: 132, color: 'Café',  textura: 'Texturizada', precio: 419 },
         ]
     },
 
